@@ -1,0 +1,209 @@
+/* ===============================
+   COLD TECH - Estilos generales
+   Paleta base:
+   Fondo: #F8FAFB
+   Texto: #0A1A2F
+   Botón primario: #007BFF
+   Hover: #33B7FF
+   Acento / energía: #00E0FF
+   Borde / sombra: #A7B1BC
+================================ */
+
+/* ----- Reset y fuente general ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+body {
+    background-color: #F8FAFB;
+    color: #0A1A2F;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ----- Encabezado ----- */
+header {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(167, 177, 188, 0.3);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1, header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007BFF;
+    letter-spacing: 1px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0A1A2F;
+    font-weight: 500;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #33B7FF;
+}
+
+/* ----- Secciones principales ----- */
+section {
+    padding: 3rem 2rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0A1A2F;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* ----- Tarjetas de producto ----- */
+.product-card {
+    background-color: #FFFFFF;
+    border: 1px solid #A7B1BC;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(167, 177, 188, 0.3);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-card p {
+    color: #007BFF;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* ----- Botones ----- */
+.btn-primary {
+    background-color: #007BFF;
+    color: white;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #33B7FF;
+    box-shadow: 0 6px 14px rgba(0, 224, 255, 0.3);
+}
+
+.btn-accent {
+    background-color: #00E0FF;
+    color: #0A1A2F;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-accent:hover {
+    background-color: #33B7FF;
+    color: white;
+}
+
+/* ----- Formularios ----- */
+form {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(167, 177, 188, 0.3);
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #A7B1BC;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #007BFF;
+}
+
+/* ----- Footer ----- */
+footer {
+    background-color: #0A1A2F;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #00E0FF;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #33B7FF;
+}
+
+/* ----- Utilidades y efectos ----- */
+.shadow-soft {
+    box-shadow: 0 2px 6px rgba(167, 177, 188, 0.25);
+}
+
+.text-accent {
+    color: #00E0FF;
+}
+
+.text-primary {
+    color: #007BFF;
+}
+
+.bg-light {
+    background-color: #F8FAFB;
+}
+
+.bg-dark {
+    background-color: #0A1A2F;
+    color: white;
+}
+
+.rounded-xl {
+    border-radius: 16px;
+}
