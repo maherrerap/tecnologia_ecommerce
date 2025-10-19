@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cold Tech — Contáctanos (Boceto visual)</title>
+
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <style>
+        .auth-wrap { max-width: 780px; margin: 0 auto; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-row { display: flex; flex-direction: column; }
+        .full { grid-column: 1 / -1; }
+        .actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: .5rem; }
+        .alt-action { text-align: center; margin-top: 1rem; }
+        @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body class="bg-light">
+<header>
+    <div class="logo">Cold Tech</div>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="/productos">Productos</a>
+        <a href="/login" class="text-primary">Iniciar sesión</a>
+    </nav>
+</header>
+
+<main>
+    <section class="auth-wrap">
+        <h1 class="section-title">Contáctanos</h1>
+
+        <form id="contact-form" class="shadow-soft">
+            <fieldset>
+                <legend class="text-primary" style="font-weight:700;margin-bottom:.75rem;">Tus datos</legend>
+
+                <div class="form-grid">
+                    <div class="form-row">
+                        <label for="firstName">Nombre</label>
+                        <input id="firstName" name="first_name" type="text" placeholder="Tu nombre" />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="lastName">Apellido</label>
+                        <input id="lastName" name="last_name" type="text" placeholder="Tu apellido" />
+                    </div>
+
+                    <div class="form-row full">
+                        <label for="email">Correo electrónico</label>
+                        <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" />
+                    </div>
+
+                    <div class="form-row full">
+                        <label for="phone">Teléfono celular</label>
+                        <input id="phone" name="phone" type="tel" placeholder="+593 99 999 9999" />
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset style="margin-top:1rem;">
+                <legend class="text-primary" style="font-weight:700;margin-bottom:.75rem;">Mensaje</legend>
+
+                <div class="form-row full">
+                    <label for="message">Cuéntanos en qué podemos ayudarte</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+            </fieldset>
+
+            <div class="actions">
+                <button type="button" class="btn-primary">Enviar mensaje</button>
+            </div>
+
+            <p class="alt-action">¿Prefieres correo? Escríbenos a <a href="mailto:soporte@coldtech.io" class="text-primary">soporte@coldtech.com</a></p>
+        </form>
+    </section>
+</main>
+
+<footer class="bg-dark">
+    <p>&copy; 2025 Cold Tech. Todos los derechos reservados.
+        <a href="#">Privacidad</a> • <a href="#">Términos</a>
+    </p>
+</footer>
+</body>
+</html>
