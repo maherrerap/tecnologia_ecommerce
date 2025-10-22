@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!--Franja superior-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+            <img src="images/cold_tech_no_titulo.png" alt="Logo Cold Tech" width="50" height="50" class="me-2">
+            Cold Tech
+        </a>
+    </div>
+</nav>
+
+<!--Detalle del Producto-->
+<div class="container">
+    <div class="row">
+
+        <!--Imagenes pequeñas a la izquierda-->
+        <div class="col-2 d-flex flex-column align-items-start">
+            <img src="images/SamsungTab/tab1.png" class="img-thumbnail" alt="Iphone 1" style="max-width: 100px;">
+            <img src="images/SamsungTab/tab2.png" class="img-thumbnail" alt="Iphone 2" style="max-width: 100px;">
+            <img src="images/SamsungTab/tab3.png" class="img-thumbnail" alt="Iphone 3" style="max-width: 100px;">
+            <img src="images/SamsungTab/tab4.png" class="img-thumbnail" alt="Iphone 4" style="max-width: 100px;">
+            <img src="images/SamsungTab/tab5.png" class="img-thumbnail" alt="Iphone 5" style="max-width: 100px;">
+        </div>
+
+        <!-- Imagen principal con breve información -->
+        <div class="col">
+            <div class="row align-items-center">
+
+                <!-- Imagen principal -->
+                <div class="col-md-6 d-flex justify-content-center">
+                    <img src="images/SamsungTab/tab1.png" class="img-fluid rounded shadow" alt="Imagen Principal" style="max-width: 400px;">
+                </div>
+
+                <!-- Texto de producto -->
+                <div class="col-md-6 text-start">
+                    <h2 class="fw-bold">Samsung Galaxy Tab S10 Ultra</h2>
+                    <h4 class="text-primary fw-bold">$979,99</h4>
+                    <p class="text-muted mb-3">
+                        La Samsung Galaxy Tab S10 Ultra combina pantalla AMOLED 14.6″ 120 Hz, Snapdragon 8 Gen 3, S Pen incluido y modo DeX para productividad profesional. Potencia, diseño y conectividad 5G en una sola tablet premium
+                    </p>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <button class="btn btn-primary">Añadir al carrito</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--Especificaciones tecnicas-->
+<div class="text-center mt-3">
+    <button class="btn btn-primary fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#specsTable">
+        Especificaciones
+    </button>
+
+    <div class="collapse mt-4" id="specsTable">
+        <table class="table table-striped table-bordered table-sm shadow-soft tabla-especificaciones">
+            <thead class="table-light">
+            <tr>
+                <th class="text-center">Categoría</th>
+                <th class="text-start">Especificación</th>
+            </tr>
+            </thead>
+            <tbody class="text-start">
+            <tr>
+                <td class="text-center">Modelo</td>
+                <td>Samsung Galaxy Tab S10 Ultra</td>
+            </tr>
+            <tr>
+                <td class="text-center">Pantalla</td>
+                <td>14.6″ Dynamic AMOLED 2X, resolución 2960 × 1848 (WQXGA+), 120 Hz, HDR10+</td>
+            </tr>
+            <tr>
+                <td class="text-center">Procesador (CPU)</td>
+                <td>Qualcomm Snapdragon® 8 Gen 3 for Galaxy (octa-core, 4 nm)</td>
+            </tr>
+            <tr>
+                <td class="text-center">Gráficos (GPU)</td>
+                <td>Adreno™ 750</td>
+            </tr>
+            <tr>
+                <td class="text-center">Almacenamiento interno</td>
+                <td>512 GB UFS 4.0 (expandible mediante microSD hasta 1 TB)</td>
+            </tr>
+            <tr>
+                <td class="text-center">Sistema Operativo</td>
+                <td>Android 15 con One UI 7.0</td>
+            </tr>
+            <tr>
+                <td class="text-center">Cámaras traseras</td>
+                <td>Dual: 13 MP principal (f/2.0, AF) + 8 MP ultra gran angular (f/2.2)</td>
+            </tr>
+            <tr>
+                <td class="text-center">Cámara frontal</td>
+                <td>Dual 12 MP (principal + ultra gran angular), ideal para videollamadas y desbloqueo facial</td>
+            </tr>
+            <tr>
+                <td class="text-center">Batería</td>
+                <td>11,200 mAh (carga rápida de 45 W, USB-C 3.2)</td>
+            </tr>
+            <tr>
+                <td class="text-center">Duración estimada</td>
+                <td>Hasta 16 h de reproducción de video continua</td>
+            </tr>
+            <tr>
+                <td class="text-center">Puertos</td>
+                <td>USB-C 3.2 Gen 2 (DisplayPort out), pin magnético para teclado / S Pen</td>
+            </tr>
+            <tr>
+                <td class="text-center">Seguridad</td>
+                <td>Desbloqueo facial, lector de huellas bajo pantalla, Knox 3.9</td>
+            </tr>
+            <tr>
+                <td class="text-center">Audio</td>
+                <td>Cuatro altavoces AKG con Dolby Atmos®</td>
+            </tr>
+            <tr>
+                <td class="text-center">Material </td>
+                <td>Aluminio Armor (unibody ultradelgado, 5.5 mm)</td>
+            </tr>
+            <tr>
+                <td class="text-center">Peso</td>
+                <td>732 g</td>
+            </tr>
+            <tr>
+                <td class="text-center">Colores</td>
+                <td>Graphite, Silver, Navy</td>
+            </tr>
+            <tr>
+                <td class="text-center">Incluye</td>
+                <td>S Pen (magnético, batería integrada), cable USB-C, guía rápida</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
