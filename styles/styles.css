@@ -199,6 +199,10 @@ footer a:hover {
     background-color: #F8FAFB;
 }
 
+.bg-primary {
+    background-color: #007BFF !important;
+}
+
 .bg-dark {
     background-color: #0A1A2F;
     color: white;
@@ -206,4 +210,30 @@ footer a:hover {
 
 .rounded-xl {
     border-radius: 16px;
+}
+
+/* ----- Tabla de especificaciones ----- */
+.tabla-especificaciones {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 0.95rem;
+}
+
+.tabla-especificaciones th {
+    background-color: #F0F4F8;
+    color: #0A1A2F;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.tabla-especificaciones td {
+    text-align: left;
+    color: #333;
+}
+
+.tabla-especificaciones tr:hover {
+    background-color: #F8FAFB;
+    transition: background-color 0.3s ease;
 }
