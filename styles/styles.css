@@ -9,19 +9,23 @@
    Borde / sombra: #A7B1BC
 ================================ */
 
+/* ===============================
+   COLD TECH - Estilos generales
+   Paleta base:
+   Fondo: #F8FAFB
+   Texto: #0A1A2F
+   Botón primario: #007BFF
+   Hover: #33B7FF
+   Acento / energía: #00E0FF
+   Borde / sombra: #A7B1BC
+================================ */
+
 /* ----- Reset y fuente general ----- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', 'Inter', sans-serif;
-}
-
-body {
-    background-color: #F8FAFB;
-    color: #0A1A2F;
-    line-height: 1.6;
-    scroll-behavior: smooth;
 }
 
 /*PUEDE DESAPARECER POR EL USO DE BOOTSTRAP*/
@@ -40,7 +44,6 @@ header {
     z-index: 10;
 }
 
-
 header h1, header .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -48,6 +51,7 @@ header h1, header .logo {
     letter-spacing: 1px;
 }
 
+/*SI SE USAN LIBRERÍAS DE BOOTSTRAP ESTOS YA NO SE UTILIZAN...*/
 nav a {
     text-decoration: none;
     color: #0A1A2F;
@@ -203,10 +207,6 @@ footer a:hover {
     background-color: #F8FAFB;
 }
 
-.bg-primary {
-    background-color: #007BFF !important;
-}
-
 .bg-dark {
     background-color: #0A1A2F;
     color: white;
@@ -215,7 +215,6 @@ footer a:hover {
 .rounded-xl {
     border-radius: 16px;
 }
-
 
 /*COSAS AÑADIDAS POR MARTIN*/
 
@@ -269,7 +268,8 @@ p {
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /*Reparte Verticalmente*/
+    justify-content: space-between;
+    /*Reparte Verticalmente*/
     height: 100%;
 }
 
@@ -280,13 +280,16 @@ p {
 }
 
 .card-text {
-    flex-grow: 1; /*Hace que el texto ocupe el espacio disponible de la carta*/
+    flex-grow: 1;
+    /*Hace que el texto ocupe el espacio disponible de la carta*/
     text-align: center;
 }
 
 .card .btn {
-    align-self: center; /*Centra horizonralmente el botón*/
-    margin-top: auto; /*Empuja boton hasta el final del contenido*/
+    align-self: center;
+    /*Centra horizonralmente el botón*/
+    margin-top: auto;
+    /*Empuja boton hasta el final del contenido*/;
 }
 
 .card .card-title {
@@ -302,6 +305,128 @@ p {
 
 #texto_footer {
     color: white;
+}
+
+/* ===== HEADER tipo Amazon adaptado a paleta COLD TECH ===== */
+.header-coldtech {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0A1A2F;
+    padding: 10px 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* LADO IZQUIERDO: LOGO + NOMBRE */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-left .logo {
+    height: 50px;
+}
+
+.header-left .brand {
+    color: #00E0FF;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* CENTRO: BARRA DE BÚSQUEDA */
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 30px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #A7B1BC;
+    border-radius: 6px 0 0 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #007BFF;
+}
+
+.search-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #33B7FF;
+}
+
+/* LADO DERECHO: LINKS + BOTÓN LOGIN */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00E0FF;
+}
+
+.btn-login {
+    background-color: #007BFF;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #33B7FF;
+}
+
+body {
+    background-color: #F8FAFB;
+    color: #0A1A2F;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0A1A2F;
+    font-weight: 500;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.bg-primary {
+    background-color: #007BFF !important;
 }
 
 /* ----- Tabla de especificaciones ----- */
@@ -329,3 +454,5 @@ p {
     background-color: #F8FAFB;
     transition: background-color 0.3s ease;
 }
+
+/* Archivo fusionado automáticamente: estilos_fusionados.css */
