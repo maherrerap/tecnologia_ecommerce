@@ -73,17 +73,6 @@ section {
 }
 
 /* ----- Tarjetas de producto ----- */
-
-/* ===== Distribución de productos en cuadrícula ===== */
-.productos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    justify-items: center;
-    align-items: start;
-    padding: 1rem 0;
-}
-
 .product-card {
     background-color: #FFFFFF;
     border: 1px solid #A7B1BC;
