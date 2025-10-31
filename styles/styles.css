@@ -11,7 +11,7 @@
 
 
 
-
+/*NO COPIAR ESTO AL GITHUB SOLO MODIFIQUE PARA IHCCCC*/
 
 
 
@@ -42,7 +42,7 @@ header {
 header h1, header .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #007BFF;
+    color: #FFFFFF;
     letter-spacing: 1px;
 }
 
@@ -322,13 +322,16 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #0A1A2F;
+    background-color: #1f2329;
+    border-top: 1px solid #3a3f46;
+    border-bottom: 1px solid #3a3f46;
     padding: 10px 25px;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 /* LADO IZQUIERDO: LOGO + NOMBRE */
 .header-left {
@@ -342,7 +345,7 @@ p {
 }
 
 .header-left .brand {
-    color: #00E0FF;
+    color: #FFFFFF;
     font-size: 1.4rem;
     letter-spacing: 1px;
     font-weight: 700;
@@ -356,6 +359,7 @@ p {
     align-items: center;
     max-width: 500px;
     margin: 0 30px;
+    color: #0A1A2F;
 }
 
 .search-bar {
@@ -466,3 +470,4 @@ nav a {
 }
 
 /* Archivo fusionado automáticamente: estilos_fusionados.css */
+
