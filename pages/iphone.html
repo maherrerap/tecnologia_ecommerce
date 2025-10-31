@@ -13,15 +13,33 @@
 </head>
 <body>
 
-<!--Franja superior-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
-            <img src="../images/cold_tech_logo.png" alt="Logo Cold Tech" width="50" height="50" class="me-2">
-            Cold Tech
-        </a>
-    </div>
-</nav>
+<header class = "shadow-soft">
+
+    <!-- Se crea una barra de navegación en Bootstrap -->
+    <nav class = "navbar navbar-expand-lg bg-body-transparent">
+        <div class = "container-fluid">
+            <div class = "d-flex align-items-center gap-2">
+                <img src = "../images/cold_tech_logo.png" alt = "cold_tech_logo" height = "70">
+            </div>
+            <button class = "navbar-toggler" type = "button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label ="Toggle navigation">
+                <span class = "navbar-nav me-auto mb-2 mb-lg-0"></span>
+            </button>
+            <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
+                <ul class = "navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class = "nav-item">
+                        <a class = "nav-link" href = "../pages/portada.html">Inicio</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link"  href = "../pages/productos.html">Productos</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link"  href = "Formulario.html">Contactános</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <!--Detalle del Producto-->
 <div class="container">

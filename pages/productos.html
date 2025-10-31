@@ -5,170 +5,71 @@
     <meta charset="UTF-8">
     <title>Catálogo de Productos</title>
     <link rel="stylesheet" href="../lib/css/bootstrap.css">
-    <link rel ="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 
 </head>
 <body>
-    <header class = "shadow-soft">
-
-        <!-- Se crea una barra de navegación en Bootstrap -->
-        <nav class = "navbar navbar-expand-lg bg-body-transparent">
-            <div class = "container-fluid">
-                <div class = "d-flex align-items-center gap-2">
-                    <img src = "../images/cold_tech_logo.png" alt = "cold_tech_logo" height = "70">
-                </div>
-                <button class = "navbar-toggler" type = "button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label ="Toggle navigation">
-                    <span class = "navbar-nav me-auto mb-2 mb-lg-0"></span>
-                </button>
-                <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
-                    <ul class = "navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class = "nav-item">
-                            <a class = "nav-link" href = "../pages/portada.html">Inicio</a>
-                        </li>
-                        <li class = "nav-item">
-                            <a class = "nav-link"  href = "../pages/productos.html">Productos</a>
-                        </li>
-                        <li class = "nav-item">
-                            <a class = "nav-link"  href = "Formulario.html">Contactános</a>
-                        </li>
-                    </ul>
-                </div>
+<header class="shadow-soft">
+    <!-- Se crea una barra de navegación en Bootstrap -->
+    <nav class="navbar navbar-expand-lg bg-body-transparent">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center gap-2">
+                <img src="../images/cold_tech_logo.png" alt="cold_tech_logo" height="70">
             </div>
-        </nav>
-    </header>
-
-    <h1>Catálogo de Productos</h1>
-    <p>En Cold Tech encontrarás una gran variedad de productos tecnológicos de calidad.</p>
-    <p>Visita nuestro amplio catálogo de productos que pueden interesarte: </p>
-
-    <!-- SE PROCEDE A MEZCLAR UN GRID CON CARDS PARA EL CATÁLOGO DE PRODUCTOS -->
-
-    <div class = "container">
-        <div class = "row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2">
-
-            <div class = "col">
-                <div class = "card h-100 d-flex flex-column">
-                    <img src = "../images/iphone_17.jpg" alt = "iphone_17" class = "card-img-top">
-                    <div class = "card-body">
-                        <h5 class = "card-title">iPhone 17</h5>
-                        <p class = "card-text">El iPhone 17 representa la nueva generación de smartphones
-                            premium de Apple. </p>
-                        <a href = "../pages/iphone.html" class = "btn btn-primary">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-            <div class = "col">
-                <div class = "card h-100 d-flex flex-column">
-                    <img src = "../images/pixel_10_pro.jpg" alt = "pixel_10_pro" class = "card-img-top">
-                    <div class = "card-body">
-                        <h5 class = "card-title">Google Pixel 10 Pro</h5>
-                        <p class = "card-text">El Google Pixel 10 Pro Fold (2025) representa la unión
-                            perfecta entre innovación, potencia e inteligencia artificial.</p>
-                        <a href = "../pages/pixel.html" class = "btn btn-primary">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-            <div class = "col">
-                <div class = "card h-100 d-flex flex-column">
-                    <img src = "../images/msi_titan.jpg" alt = "msi_titan" class = "card-img-top">
-                    <div class = "card-body">
-                        <h5 class = "card-title">MSI Titan 18 HX Dragon Edition</h5>
-                        <p class = "card-text">La MSI Titan 18 HX Dragon Edition representa
-                            la cúspide del rendimiento en portátiles gamer y estaciones de
-                            trabajo móviles.</p>
-                        <a href = "../pages/MSItitan.html" class = "btn btn-primary">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-            <div class = "col">
-                <div class = "card h-100 d-flex flex-column">
-                    <img src = "../images/vector_a18.png" alt = "vector_a18" class = "card-img-top">
-                    <div class = "card-body">
-                        <h5 class = "card-title">MSI Vector A18 HX</h5>
-                        <p class = "card-text">La MSI Vector A18 HX es una laptop de alto rendimiento
-                            diseñada para usuarios que exigen potencia y estabilidad.</p>
-                        <a href = "../pages/MSIvector.html" class = "btn btn-primary">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-            <div class = "col">
-                <div class = "card h-100 d-flex flex-column">
-                    <img src = "../images/logitech_g915.png" alt = "Logitech_G915" class = "card-img-top">
-                    <div class = "card-body">
-                        <h5 class = "card-title">Logitech G915 TKL Lightspeed</h5>
-                        <p class = "card-text">El Logitech G915 TKL Lightspeed es un teclado mecánico
-                            inalámbrico de gama alta diseñado para jugadores, programadores y creadores.</p>
-                        <a href = "../pages/LogitechG915.html" class = "btn btn-primary">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-            <div class = "col">
-                <div class = "card h-100 d-flex flex-column">
-                    <img src = "../images/logitech_mx.jpg" alt = "Logitech_mx" class = "card-img-top">
-                    <div class = "card-body">
-                        <h5 class = "card-title">Logitech MX Master 4S</h5>
-                        <p class = "card-text">El Logitech MX Master 4S es el nuevo referente en productividad
-                            premium. Diseñado para profesionales exigentes.</p>
-                        <a href = "../pages/LogitechMXMaster.html" class = "btn btn-primary">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-            <div class = "col">
-                <div class = "card h-100 d-flex flex-column">
-                    <img src = "../images/hp_omen.jpg" alt = "hp_omen_27c" class = "card-img-top">
-                    <div class = "card-body">
-                        <h5 class = "card-title">HP Omen 27c QHD 165 Hz</h5>
-                        <p class = "card-text">El HP Omen 27c es un monitor curvo de alto rendimiento diseñado
-                            para ofrecer una experiencia de juego inmersiva y fluida.</p>
-                        <a href = "../pages/hpOmen.html" class = "btn btn-primary">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-            <div class = "col">
-                <div class = "card h-100 d-flex flex-column">
-                    <img src = "../images/dell_alienware.jpg" alt = "dell_alienware" class = "card-img-top">
-                    <div class = "card-body">
-                        <h5 class = "card-title">Dell Alienware AW3423DW</h5>
-                        <p class = "card-text">Redefine la experiencia visual con tecnología
-                            QD-OLED, ofreciendo colores ultra vívidos, negros perfectos y contraste infinito.</p>
-                        <a href = "../pages/DellAlienware.html" class = "btn btn-primary">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-            <div class = "col">
-                <div class = "card h-100 d-flex flex-column">
-                    <img src = "../images/sony_wh.png" alt = "sony_wh" class = "card-img-top">
-                    <div class = "card-body">
-                        <h5 class = "card-title">Sony WH-1000XM6 – Auriculares Inalámbricos </h5>
-                        <p class = "card-text">Representan la sexta generación de la reconocida
-                            serie líder en cancelación activa de ruido (ANC). </p>
-                        <a href = "../pages/SonyAuriculares.html" class = "btn btn-primary">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-            <div class = "col">
-                <div class = "card h-100 d-flex flex-column">
-                    <img src = "../images/samsung_gal_tab.jpg" alt = "samsung_gal_tab" class = "card-img-top">
-                    <div class = "card-body">
-                        <h5 class = "card-title"> Samsung Galaxy Tab S10 Ultra </h5>
-                        <p class = "card-text">La Samsung Galaxy Tab S10 Ultra es la tablet más avanzada de la línea
-                            Galaxy, pensada para rendimiento de nivel profesional.</p>
-                        <a href = "../pages/SamsungTab.html" class = "btn btn-primary">Ver Detalles</a>
-                    </div>
-                </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-label="Toggle navigation">
+                <span class="navbar-nav me-auto mb-2 mb-lg-0"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/portada.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Formulario.html">Contactános</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
+</header>
+
+<h1>Catálogo de Productos</h1>
+<p>En Cold Tech encontrarás una gran variedad de productos tecnológicos de calidad.</p>
+<p>Visita nuestro amplio catálogo de productos que pueden interesarte: </p>
+
+<!-- SE PROCEDE A MEZCLAR UN GRID CON CARDS PARA EL CATÁLOGO DE PRODUCTOS -->
+
+<div class="container">
+    <div id='products'>
+        <!--Aquí se incluyen los productos dinámicamente desde dom.js-->
+
     </div>
 
-    <!-- Se crea el footer de la página web-->
-    <footer class = "text-center p-4" style = "background-color: #0A1A2F; color: white;">
-        <p class = "mb-1" id = "texto_footer">@ 2025 ColdTech Inc. | Todos los Derechos Reservados</p>
-        <a href="#" class = "text-white me-3"><img src = "../images/facebook.png" alt = "facebook" height="30"><i class ="bi bi-facebook">cuenta_facebook</i></a>
-        <a href="#" class = "text-white me-3"><img src = "../images/instagram.png" alt = "instagram" height="30"><i class ="bi bi-instagram">cuenta_instagram</i></a>
-        <a href="#" class = "text-white"><img src = "../images/X_logo.png" alt = "X_logo" height="30"><i class ="bi bi-twitter-x">cuenta_X</i></a>
-    </footer>
+</div>
+
+<!-- Se crea el footer de la página web-->
+<footer class="text-center p-4" style="background-color: #0A1A2F; color: white;">
+    <p class="mb-1" id="texto_footer">@ 2025 ColdTech Inc. | Todos los Derechos Reservados</p>
+    <a href="#" class="text-white me-3"><img src="../images/facebook.png" alt="facebook" height="30"><i
+            class="bi bi-facebook">Cuenta_facebook</i></a>
+    <a href="#" class="text-white me-3"><img src="../images/instagram.png" alt="instagram" height="30"><i
+            class="bi bi-instagram">cuenta_instagram</i></a>
+    <a href="#" class="text-white"><img src="../images/X_logo.png" alt="X_logo" height="30"><i class="bi bi-twitter-x">cuenta_X</i></a>
+</footer>
 
 
 
+<script src="../scripts/dom.js"></script>
+
+<style>
+    .nueva {
+        background: #ffffff;
+    }
+</style>
 </body>
 </html>
