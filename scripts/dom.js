@@ -182,3 +182,15 @@ products.forEach((producto, index) => {
     boton_detalle.classList.add("btn", "btn-primary");
     cartas_body[index].appendChild(boton_detalle);
 });
+
+/*
+const button = document.getElementById("btn-action");
+button.addEventListener("click", function(){
+    alert("el diablaso");
+})*/
+
+/*
+const button = document.getElementById("btn-action");
+button.addEventListener("click", function(event){
+    console.log(event);
+})*/
