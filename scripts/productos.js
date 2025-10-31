@@ -1,4 +1,4 @@
-// Archivo: productos.scripts
+// Archivo: productos.js
 const productos = [
     {
         id: "P0001",
@@ -208,15 +208,8 @@ const productos = [
     }
 ];
 
-console.log(document)
-const  locos = document.getElementById("btn_action");
 
-/*
+const  botones_locos = document.getElementById("btn_action");
 botones_locos.addEventListener("click", function() {
     alert("hice click");
 })
-*/
-locos.addEventListener("click", function(event) {
-    console.log(event);
-})
-

@@ -1,4 +1,4 @@
-// Archivo: mostrarEspecificaciones.scripts
+// Archivo: mostrarEspecificaciones.js
 const idActual = document.body.dataset.id;
 const producto = productos.find(p => p.id === idActual);
 
@@ -20,7 +20,10 @@ if (producto) {
     const tbody = document.createElement("tbody");
     producto.especificaciones.forEach(([categoria, valor]) => {
         const fila = document.createElement("tr");
-        fila.innerHTML = `<td class="text-center">${categoria}</td><td>${valor}</td>`;
+        fila.innerHTML = `
+          <td class="text-center">${categoria}</td>
+          <td>${valor}</td>
+        `;
         tbody.appendChild(fila);
     });
 
