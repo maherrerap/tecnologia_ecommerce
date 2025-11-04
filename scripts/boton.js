@@ -1,10 +1,20 @@
-const  locos = document.getElementById("btn_action");
+const  button = document.getElementById("btn-action");
 
-/*
-botones_locos.addEventListener("click", function() {
+
+button.addEventListener("click", function() {
     alert("hice click");
 })
-*/
-locos.addEventListener("click", function(event) {
-    console.log(event);
+
+button.addEventListener("click", function() {
+    console.log("hice click");
+})
+
+const form = document.getElementById("form");
+
+form.addEventListener("submit", function(e) {
+    console.log("form submitted");
+})
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
 })
