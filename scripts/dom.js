@@ -182,3 +182,37 @@ products.forEach((producto, index) => {
     boton_detalle.classList.add("btn", "btn-primary");
     cartas_body[index].appendChild(boton_detalle);
 });
+
+
+// CLASE 2025/10/31
+
+const bton_clase = document.getElementById("btn-action");
+
+// Se crea un LISTENER
+
+/*
+bton_clase.addEventListener("click", function() {
+    alert("WASAAAAAAAAA");
+})
+*/
+/*
+bton_clase.addEventListener("click", function(event) {
+    alert("Wasaaaa Pt2");
+    console.log(event);
+})
+*/
+/*
+const email_recuperado = document.getElementById("email_clase");
+
+bton_clase.addEventListener("click", function() {
+    alert(email_recuperado.value);
+})
+
+// Escuchador del formulario
+
+const formulario = document.getElementById("email_clase");
+
+formulario.addEventListener("submit",function () {
+    event.preventDefault();
+})
+ */
