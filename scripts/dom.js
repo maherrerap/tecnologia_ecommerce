@@ -216,3 +216,14 @@ formulario.addEventListener("submit",function () {
     event.preventDefault();
 })
  */
+/*
+const button = document.getElementById("btn-action");
+button.addEventListener("click", function(){
+    alert("el diablaso");
+})*/
+
+/*
+const button = document.getElementById("btn-action");
+button.addEventListener("click", function(event){
+    console.log(event);
+})*/
