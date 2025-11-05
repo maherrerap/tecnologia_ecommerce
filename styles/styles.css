@@ -9,12 +9,9 @@
    Borde / sombra: #A7B1BC
 ================================ */
 
-
-
-/*NO COPIAR ESTO AL GITHUB SOLO MODIFIQUE PARA IHCCCC*/
-
-
-
+/* ===============================
+   RESETEO Y FUENTE GLOBAL
+================================ */
 /* ----- Reset y fuente general ----- */
 * {
     margin: 0;
@@ -23,11 +20,19 @@
     font-family: 'Poppins', 'Inter', sans-serif;
 }
 
-/*PUEDE DESAPARECER POR EL USO DE BOOTSTRAP*/
-/* ----- Encabezado ----- */
+body {
+    background-color: #F8FAFB;
+    color: #0A1A2F;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ===============================
+   ENCABEZADO GENERAL (Bootstrap)
+================================ */
 header {
-    background-color: #FFFFFF;
-    box-shadow: 0 2px 8px rgba(167, 177, 188, 0.3);
+    background-color: #0A1A2F;
+    box-shadow: 0 2px 6px rgba(167, 177, 188, 0.3);
     padding: 0;
     margin: 0;
     width: 100%;
@@ -39,14 +44,16 @@ header {
     z-index: 10;
 }
 
-header h1, header .logo {
+header h1,
+header .logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: #FFFFFF;
+    color: #0A1A2F;
     letter-spacing: 1px;
 }
 
-/*SI SE USAN LIBRERÍAS DE BOOTSTRAP ESTOS YA NO SE UTILIZAN...*/
+/* Navegación básica (en caso de no usar Bootstrap) */
 nav a {
     text-decoration: none;
     color: #0A1A2F;
@@ -56,10 +63,12 @@ nav a {
 }
 
 nav a:hover {
-    color: #33B7FF;
+    color: #0A1A2F;
 }
 
-/* ----- Secciones principales ----- */
+/* ===============================
+   SECCIONES PRINCIPALES
+================================ */
 section {
     padding: 3rem 2rem;
 }
@@ -72,42 +81,90 @@ section {
     margin-bottom: 2rem;
 }
 
+/* ===============================
+   TARJETAS DE PRODUCTO
+================================ */
 /* ----- Tarjetas de producto ----- */
-.product-card {
-    background-color: #FFFFFF;
-    border: 1px solid #A7B1BC;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(167, 177, 188, 0.3);
-    padding: 1rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+/* ===== Distribución de productos en cuadrícula ===== */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    align-items: start;
+    padding: 1rem 0;
 }
 
+/* ===== Tarjeta individual ===== */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    /* --- Tamaño y estructura --- */
+    width: 100%;
+    max-width: 320px;
+    height: 420px;
+    padding: 1.5rem;
+    text-align: center;
+
+    /* --- Cuadro con borde y sombra --- */
+    border: 2px solid #E0E6ED;              /* Borde gris claro */
+    border-radius: 14px;                    /* Esquinas suaves */
+    background-color: #FFFFFF;              /* Fondo limpio */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Hover elegante */
 .product-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.25);
+    border-color: #0A1A2F;                  /* Borde azul al pasar el mouse */
 }
 
+/* Imagen uniforme y centrada */
 .product-card img {
-    max-width: 100%;
-    border-radius: 8px;
+    width: 100%;
+    height: 200px;                          /* Mismo alto para todas */
+    object-fit: contain;                    /* Mantiene proporción */
+    object-position: center;
+    background-color: #F8FAFB;
+    border-radius: 10px;
+    border: 1px solid #E1E5EA;              /* Marco sutil interno */
     margin-bottom: 1rem;
+    display: block;
 }
 
+/* Título */
 .product-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0A1A2F;
+    margin: 0.5rem 0;
 }
 
+/* Precio */
 .product-card p {
     color: #007BFF;
     font-weight: 600;
     margin-bottom: 1rem;
 }
 
+/* ===============================
+   BOTONES GENERALES
+================================ */
+/* Botón alineado abajo */
+.product-card a {
+    margin-top: auto;
+}
+
+
 /* ----- Botones ----- */
 .btn-primary {
-    background-color: #007BFF;
+    background-color: #0A1A2F;
     color: white;
     font-weight: 600;
     padding: 0.7rem 1.5rem;
@@ -119,12 +176,12 @@ section {
 }
 
 .btn-primary:hover {
-    background-color: #33B7FF;
+    background-color: #0A1A2F;
     box-shadow: 0 6px 14px rgba(0, 224, 255, 0.3);
 }
 
 .btn-accent {
-    background-color: #00E0FF;
+    background-color: #0A1A2F;
     color: #0A1A2F;
     font-weight: 600;
     padding: 0.7rem 1.5rem;
@@ -135,11 +192,13 @@ section {
 }
 
 .btn-accent:hover {
-    background-color: #33B7FF;
+    background-color: #0A1A2F;
     color: white;
 }
 
-/* ----- Formularios ----- */
+/* ===============================
+   FORMULARIOS (BASE GENERAL)
+================================ */
 form {
     background-color: #FFFFFF;
     padding: 2rem;
@@ -162,25 +221,27 @@ form textarea {
 
 form input:focus,
 form textarea:focus {
-    border-color: #007BFF;
+    border-color: #0A1A2F;
 }
 
-/* --- Limpieza visual de los fieldset (cuadros de texto alrededor del formulario) --- */
+/* Fieldset y legend sin bordes */
 form fieldset {
-    border: none;            /* quita el marco gris del navegador */
-    padding: 0;              /* elimina espacio extra */
-    margin-bottom: 1.5rem;   /* separación entre secciones */
+    border: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
 }
 
 form legend {
     border: none;
     font-size: 1.1rem;
     font-weight: 700;
-    color: #007BFF;
+    color: #0A1A2F;
     margin-bottom: 0.75rem;
 }
 
-/* ----- Footer ----- */
+/* ===============================
+   FOOTER
+================================ */
 footer {
     background-color: #0A1A2F;
     color: white;
@@ -190,27 +251,33 @@ footer {
 }
 
 footer a {
-    color: #00E0FF;
+    color: #0A1A2F;
     margin: 0 0.5rem;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #33B7FF;
+    color: #0A1A2F;
 }
 
-/* ----- Utilidades y efectos ----- */
+#texto_footer {
+    color: white;
+}
+
+/* ===============================
+   UTILIDADES Y EFECTOS GLOBALES
+================================ */
 .shadow-soft {
     box-shadow: 0 2px 6px rgba(167, 177, 188, 0.25);
 }
 
 .text-accent {
-    color: #00E0FF;
+    color: #0A1A2F;
 }
 
 .text-primary {
-    color: #007BFF;
+    color: #0A1A2F;
 }
 
 .bg-light {
@@ -222,15 +289,17 @@ footer a:hover {
     color: white;
 }
 
+.bg-primary {
+    background-color: #007BFF !important;
+}
+
 .rounded-xl {
     border-radius: 16px;
 }
 
-/*COSAS AÑADIDAS POR MARTIN*/
-
-/*ESTILOS DE BARRA DE NAVEGACION*/
-
-
+/* ===============================
+   BARRA DE NAVEGACIÓN / HEADER
+================================ */
 .navbar {
     background-color: #1E2024 !important;
     width: 100%;
@@ -240,6 +309,7 @@ footer a:hover {
     color: #FFFFFF !important;
 }
 
+/* Header alternativo tipo Amazon */
 h1, h2, h3 {
     font-family: 'Poppins', 'Segoe UI', sans-serif;
     font-weight: 700;
@@ -261,7 +331,7 @@ h1 {
 
 h1:hover {
     color: #00E0FF;
-    border-left-color: #007BFF;
+    border-left-color: #0A1A2F;
 }
 
 p {
@@ -332,8 +402,6 @@ p {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-/* LADO IZQUIERDO: LOGO + NOMBRE */
 .header-left {
     display: flex;
     align-items: center;
@@ -346,12 +414,13 @@ p {
 
 .header-left .brand {
     color: #FFFFFF;
+    color: #0A1A2F;
     font-size: 1.4rem;
     letter-spacing: 1px;
     font-weight: 700;
 }
 
-/* CENTRO: BARRA DE BÚSQUEDA */
+/* Centro: barra de búsqueda */
 .header-center {
     flex: 1;
     display: flex;
@@ -359,7 +428,6 @@ p {
     align-items: center;
     max-width: 500px;
     margin: 0 30px;
-    color: #0A1A2F;
 }
 
 .search-bar {
@@ -373,11 +441,11 @@ p {
 }
 
 .search-bar:focus {
-    border-color: #007BFF;
+    border-color: #0A1A2F;
 }
 
 .search-btn {
-    background-color: #007BFF;
+    background-color: #0A1A2F;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -391,7 +459,7 @@ p {
     background-color: #33B7FF;
 }
 
-/* LADO DERECHO: LINKS + BOTÓN LOGIN */
+/* Lado derecho */
 .header-right {
     display: flex;
     align-items: center;
@@ -406,11 +474,11 @@ p {
 }
 
 .nav-link:hover {
-    color: #00E0FF;
+    color: #0A1A2F;
 }
 
 .btn-login {
-    background-color: #007BFF;
+    background-color: #0A1A2F;
     color: white;
     font-weight: 600;
     border: none;
@@ -421,29 +489,86 @@ p {
 }
 
 .btn-login:hover {
-    background-color: #33B7FF;
+    background-color: #0A1A2F;
 }
 
-body {
-    background-color: #F8FAFB;
+/* ===============================
+   TIPOGRAFÍA GENERAL
+================================ */
+h1, h2, h3 {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-weight: 700;
     color: #0A1A2F;
-    line-height: 1.6;
-    scroll-behavior: smooth;
+    margin: 1rem;
+    line-height: 1.2;
+}
+
+/* Título principal de portada */
+h1 {
+    font-size: 2.5rem;
+    color: #1E2024 !important;
+    letter-spacing: 11px;
+    text-transform: uppercase;
+    border-left: 6px solid #0037ba;
+    padding-left: 12px;
+    transition: all 0.3s ease;
+}
+
+h1:hover {
+    color: #00E0FF;
+    border-left-color: #007BFF;
 }
 
 nav a {
     text-decoration: none;
     color: #0A1A2F;
-    font-weight: 500;
-    margin: 0 1rem;
-    transition: color 0.3s ease;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 900px;
+    text-align: left;
+    margin: 0.1rem 0 0.1rem 1rem;
 }
 
-.bg-primary {
-    background-color: #007BFF !important;
+/* ===============================
+   PRODUCTOS (CARDS)
+================================ */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
-/* ----- Tabla de especificaciones ----- */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.card .btn {
+    align-self: center;
+    margin-top: auto;
+}
+
+.card .card-title {
+    text-align: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+/* ===============================
+   TABLAS DE ESPECIFICACIONES
+================================ */
 .tabla-especificaciones {
     background-color: #FFFFFF;
     border-radius: 12px;
@@ -469,5 +594,173 @@ nav a {
     transition: background-color 0.3s ease;
 }
 
-/* Archivo fusionado automáticamente: estilos_fusionados.css */
+/* FORMULARIO DE CONTACTO */
+.contact-card {
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    max-width: 650px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
 
+.contact-card:hover {
+    box-shadow: 0 8px 22px rgba(0, 123, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+.form-title {
+    color: #0A1A2F;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+form .form-control {
+    border-radius: 10px;
+    border: 1px solid #0A1A2F;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+form .form-control:focus {
+    border-color: #0A1A2F;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+/* ==========================================
+   SECCIÓN: QUIÉNES SOMOS – COLD TECH
+   Paleta oficial: Azul frío y fondo claro
+========================================== */
+
+.about-us {
+    background: linear-gradient(180deg, #0A1A2F 0%, #0A1A2F 100%);
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+/* ===== Título principal ===== */
+.about-us .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.about-us .section-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #0A1A2F;
+    margin: 0.5rem auto 0;
+    border-radius: 4px;
+}
+
+/* ===== Texto introductorio ===== */
+.about-text {
+    font-size: 1.1rem;
+    max-width: 850px;
+    margin: 1rem auto 3rem;
+    line-height: 1.8;
+    color: #F8FAFB;
+    opacity: 0.95;
+}
+
+/* ===== GRID DE TARJETAS ===== */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* ===== TARJETAS ===== */
+.about-card {
+    background-color: #FFFFFF;
+    color: #0A1A2F;
+    border: 2px solid #E0E6ED;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1.5rem;
+    max-width: 340px;
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+    border-color: #0A1A2F;
+    box-shadow: 0 8px 25px rgba(0, 224, 255, 0.3);
+}
+
+/* ===== Encabezados ===== */
+.about-card h3 {
+    color: #0A1A2F;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ===== Texto interno ===== */
+.about-card p {
+    font-size: 1rem;
+    color: #0A1A2F;
+    line-height: 1.7;
+}
+
+/* ===== Animación sutil de aparición ===== */
+@keyframes fadeUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.about-card {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* ===== Responsividad ===== */
+@media (max-width: 768px) {
+    .about-us {
+        padding: 3rem 1rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .about-card {
+        width: 100%;
+    }
+}
+
+
+/* Botón del formulario */
+form .btn-primary {
+    background-color: #0A1A2F;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+form .btn-primary:hover {
+    background-color: #0A1A2F;
+    box-shadow: 0 6px 16px rgba(0, 224, 255, 0.3);
+}
+
+.alt-action {
+    text-align: center;
+    margin-top: 1.25rem;
+}
