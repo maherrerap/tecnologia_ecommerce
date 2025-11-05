@@ -1,136 +1,141 @@
-<!-- NO PASAR ESTO AL GITHUB OJOOOOO SOLO ERA PARA IHCCC -->
 <!doctype html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cold Tech — Contáctanos (Boceto visual)</title>
+    <title>Cold Tech — Contáctanos</title>
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- (Opcional) Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
+    <!-- Bootstrap local -->
+    <link rel="stylesheet" href="../lib/css/bootstrap.css">
+    <!-- Estilos generales de Cold Tech -->
     <link rel="stylesheet" href="../styles/styles.css">
-
-    <style>
-        /* Fondo oscuro y borde superior e inferior */
-        .bg-ct {
-            background-color: #1f2329;
-            border: 1px solid #3a3f46;
-        }
-
-        /* Compactar altura de la barra */
-        .ct-header .navbar {
-            padding-top: .6rem;
-            padding-bottom: .6rem;
-        }
-
-        /* Imagen centrada verticalmente, sin enlace */
-        .navbar-brand img {
-            display: block;
-            height: 38px;
-        }
-
-        /* Estilo de enlaces de navegación */
-        .navbar-dark .navbar-nav .nav-link {
-            color: #e9ecef;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .navbar-dark .navbar-nav .nav-link:hover,
-        .navbar-dark .navbar-nav .nav-link:focus {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        /* Quitar efecto de foco azul en el toggler */
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-    </style>
 </head>
+
 <body class="bg-light">
 
-<!-- ===== HEADER (Bootstrap) ===== -->
-<header class="ct-header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-ct">
+<!-- ===== HEADER ===== -->
+<header class="shadow-soft">
+    <nav class="navbar navbar-expand-lg bg-body-transparent">
         <div class="container-fluid">
-
-            <!-- Logo estático sin redirección -->
-            <div class="navbar-brand d-flex flex-column align-items-center me-3" style="cursor: default;">
-                <img src="../images/cold_tech_logo.png" alt="cold_tech_logo" height="38">
+            <div class="d-flex align-items-center gap-2">
+                <img src="../images/cold_tech_logo.png" alt="cold_tech_logo" height="70">
             </div>
 
-            <!-- Botón hamburguesa (modo móvil) -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#ctNavbar" aria-controls="ctNavbar" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Menú de navegación -->
-            <div class="collapse navbar-collapse" id="ctNavbar">
-                <ul class="navbar-nav ms-2 mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link px-3" href="../pages/portada.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="../pages/productos.html">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="Formulario.html">Contáctanos</a></li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/portada.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Formulario.html">Contáctanos</a>
+                    </li>
                 </ul>
             </div>
-
         </div>
     </nav>
 </header>
 
-
-
+<!-- ===== MAIN ===== -->
 <main>
-    <section class="auth-wrap">
-        <h1 class="section-title">Contáctanos</h1>
+    <section class="container">
+        <h1 class="form-title">Contáctanos</h1>
 
-        <form id="contact-form" class="shadow-soft p-4 bg-white">
+        <form id="contact-form" class="contact-card" autocomplete="on">
+            <!-- Sección de datos -->
             <fieldset>
-                <legend class="text-primary fw-bold mb-3">Tus datos</legend>
+                <legend>Tus datos</legend>
 
-                <div class="form-grid">
-                    <div class="form-row">
+                <div class="row g-3">
+                    <div class="col-md-6">
                         <label for="firstName" class="form-label">Nombre</label>
-                        <input id="firstName" name="first_name" type="text" class="form-control" placeholder="Tu nombre" />
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="firstName"
+                                name="firstName"
+                                placeholder="Tu nombre"
+                                required
+                                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}"
+                                title="Solo se permiten letras y espacios (mínimo 2 caracteres)."
+                        >
                     </div>
 
-                    <div class="form-row">
+                    <div class="col-md-6">
                         <label for="lastName" class="form-label">Apellido</label>
-                        <input id="lastName" name="last_name" type="text" class="form-control" placeholder="Tu apellido" />
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="lastName"
+                                name="lastName"
+                                placeholder="Tu apellido"
+                                required
+                                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}"
+                                title="Solo se permiten letras y espacios (mínimo 2 caracteres)."
+                        >
                     </div>
 
-                    <div class="form-row full">
+                    <div class="col-12">
                         <label for="email" class="form-label">Correo electrónico</label>
-                        <input id="email" name="email" type="email" class="form-control" placeholder="tucorreo@ejemplo.com" />
+                        <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                name="email"
+                                placeholder="tucorreo@ejemplo.com"
+                                required
+                                title="Introduce un correo válio."
+                        >
                     </div>
 
-                    <div class="form-row full">
+                    <div class="col-12">
                         <label for="phone" class="form-label">Teléfono celular</label>
-                        <input id="phone" name="phone" type="tel" class="form-control" placeholder="+593 99 999 9999" />
+                        <input
+                                type="tel"
+                                class="form-control"
+                                id="phone"
+                                name="phone"
+                                placeholder="+593 99 999 9999"
+                                required
+                                pattern="(\+593|0)[0-9\s]{8,12}"
+                                title="Usa el formato +593 o 0 seguido de 8 a 12 dígitos."
+                        >
                     </div>
                 </div>
             </fieldset>
 
-            <fieldset class="mt-4">
-                <legend class="text-primary fw-bold mb-3">Mensaje</legend>
-
-                <div class="form-row full">
+            <!-- Sección de mensaje -->
+            <fieldset>
+                <legend>Mensaje</legend>
+                <div class="mb-3">
                     <label for="message" class="form-label">Cuéntanos en qué podemos ayudarte</label>
-                    <textarea id="message" name="message" rows="6" class="form-control" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    <textarea
+                            id="message"
+                            name="message"
+                            class="form-control"
+                            rows="5"
+                            placeholder="Escribe tu mensaje aquí..."
+                            required
+                            minlength="10"
+                            title="El mensaje debe tener al menos 10 caracteres."
+                    ></textarea>
                 </div>
             </fieldset>
 
-            <div class="actions">
-                <button type="button" class="btn btn-primary">Enviar mensaje</button>
+            <!-- Botón -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-4">Enviar mensaje</button>
             </div>
 
-            <p class="alt-action">
+            <p class="alt-action mt-3">
                 ¿Prefieres correo? Escríbenos a
                 <a href="mailto:soporte@coldtech.com" class="text-primary">soporte@coldtech.com</a>
             </p>
@@ -138,6 +143,7 @@
     </section>
 </main>
 
+<!-- ===== FOOTER ===== -->
 <footer class="text-center p-4" style="background-color: #0A1A2F; color: white;">
     <p class="mb-1" id="texto_footer">@ 2025 ColdTech Inc. | Todos los Derechos Reservados</p>
     <a href="#" class="text-white me-3">
@@ -151,7 +157,7 @@
     </a>
 </footer>
 
-<!-- Bootstrap JS (necesario para el colapso del menú) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ===== SCRIPTS ===== -->
+<script src="../lib/js/bootstrap.bundle.js"></script>
 </body>
 </html>

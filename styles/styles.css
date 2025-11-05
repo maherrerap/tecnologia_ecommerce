@@ -9,13 +9,9 @@
    Borde / sombra: #A7B1BC
 ================================ */
 
-
-
-/*NO COPIAR ESTO AL GITHUB SOLO MODIFIQUE PARA IHCCCC*/
-
-
-
-/* ----- Reset y fuente general ----- */
+/* ===============================
+   RESETEO Y FUENTE GLOBAL
+================================ */
 * {
     margin: 0;
     padding: 0;
@@ -23,8 +19,16 @@
     font-family: 'Poppins', 'Inter', sans-serif;
 }
 
-/*PUEDE DESAPARECER POR EL USO DE BOOTSTRAP*/
-/* ----- Encabezado ----- */
+body {
+    background-color: #F8FAFB;
+    color: #0A1A2F;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ===============================
+   ENCABEZADO GENERAL (Bootstrap)
+================================ */
 header {
     background-color: #FFFFFF;
     box-shadow: 0 2px 8px rgba(167, 177, 188, 0.3);
@@ -39,14 +43,15 @@ header {
     z-index: 10;
 }
 
-header h1, header .logo {
+header h1,
+header .logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: #FFFFFF;
     letter-spacing: 1px;
 }
 
-/*SI SE USAN LIBRERÍAS DE BOOTSTRAP ESTOS YA NO SE UTILIZAN...*/
+/* Navegación básica (en caso de no usar Bootstrap) */
 nav a {
     text-decoration: none;
     color: #0A1A2F;
@@ -59,7 +64,9 @@ nav a:hover {
     color: #33B7FF;
 }
 
-/* ----- Secciones principales ----- */
+/* ===============================
+   SECCIONES PRINCIPALES
+================================ */
 section {
     padding: 3rem 2rem;
 }
@@ -72,7 +79,9 @@ section {
     margin-bottom: 2rem;
 }
 
-/* ----- Tarjetas de producto ----- */
+/* ===============================
+   TARJETAS DE PRODUCTO
+================================ */
 .product-card {
     background-color: #FFFFFF;
     border: 1px solid #A7B1BC;
@@ -105,7 +114,9 @@ section {
     margin-bottom: 1rem;
 }
 
-/* ----- Botones ----- */
+/* ===============================
+   BOTONES GENERALES
+================================ */
 .btn-primary {
     background-color: #007BFF;
     color: white;
@@ -139,7 +150,9 @@ section {
     color: white;
 }
 
-/* ----- Formularios ----- */
+/* ===============================
+   FORMULARIOS (BASE GENERAL)
+================================ */
 form {
     background-color: #FFFFFF;
     padding: 2rem;
@@ -165,11 +178,11 @@ form textarea:focus {
     border-color: #007BFF;
 }
 
-/* --- Limpieza visual de los fieldset (cuadros de texto alrededor del formulario) --- */
+/* Fieldset y legend sin bordes */
 form fieldset {
-    border: none;            /* quita el marco gris del navegador */
-    padding: 0;              /* elimina espacio extra */
-    margin-bottom: 1.5rem;   /* separación entre secciones */
+    border: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
 }
 
 form legend {
@@ -180,7 +193,9 @@ form legend {
     margin-bottom: 0.75rem;
 }
 
-/* ----- Footer ----- */
+/* ===============================
+   FOOTER
+================================ */
 footer {
     background-color: #0A1A2F;
     color: white;
@@ -200,7 +215,13 @@ footer a:hover {
     color: #33B7FF;
 }
 
-/* ----- Utilidades y efectos ----- */
+#texto_footer {
+    color: white;
+}
+
+/* ===============================
+   UTILIDADES Y EFECTOS GLOBALES
+================================ */
 .shadow-soft {
     box-shadow: 0 2px 6px rgba(167, 177, 188, 0.25);
 }
@@ -222,15 +243,17 @@ footer a:hover {
     color: white;
 }
 
+.bg-primary {
+    background-color: #007BFF !important;
+}
+
 .rounded-xl {
     border-radius: 16px;
 }
 
-/*COSAS AÑADIDAS POR MARTIN*/
-
-/*ESTILOS DE BARRA DE NAVEGACION*/
-
-
+/* ===============================
+   BARRA DE NAVEGACIÓN / HEADER
+================================ */
 .navbar {
     background-color: #1E2024 !important;
     width: 100%;
@@ -240,84 +263,7 @@ footer a:hover {
     color: #FFFFFF !important;
 }
 
-h1, h2, h3 {
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
-    font-weight: 700;
-    color: #0A1A2F;
-    margin: 1rem;
-    line-height: 1.2;
-}
-
-/*TITULO PRINCIPAL*/
-h1 {
-    font-size: 2.5rem;
-    color: #1E2024 !important;
-    letter-spacing: 11px;
-    text-transform: uppercase;
-    border-left: 6px solid #0037ba;
-    padding-left: 12px;
-    transition: all 0.3s ease;
-}
-
-h1:hover {
-    color: #00E0FF;
-    border-left-color: #007BFF;
-}
-
-p {
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
-    color: #0A1A2F;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    max-width: 900px;
-    text-align: left;
-    margin: 0.1rem 0 0.1rem 1rem;
-}
-
-/*ESTILOS PARA CARDS DE PRODUCTOS*/
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /*Reparte Verticalmente*/
-    height: 100%;
-}
-
-.card-body {
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card-text {
-    flex-grow: 1;
-    /*Hace que el texto ocupe el espacio disponible de la carta*/
-    text-align: center;
-}
-
-.card .btn {
-    align-self: center;
-    /*Centra horizonralmente el botón*/
-    margin-top: auto;
-    /*Empuja boton hasta el final del contenido*/;
-}
-
-.card .card-title {
-    text-align: center;
-}
-
-.card-img-top {
-    width: 100%;
-    height: 250px;
-    object-fit: contain;
-    padding: 10px;
-}
-
-#texto_footer {
-    color: white;
-}
-
-/* ===== HEADER tipo Amazon adaptado a paleta COLD TECH ===== */
+/* Header alternativo tipo Amazon */
 .header-coldtech {
     display: flex;
     align-items: center;
@@ -332,8 +278,6 @@ p {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-/* LADO IZQUIERDO: LOGO + NOMBRE */
 .header-left {
     display: flex;
     align-items: center;
@@ -351,7 +295,7 @@ p {
     font-weight: 700;
 }
 
-/* CENTRO: BARRA DE BÚSQUEDA */
+/* Centro: barra de búsqueda */
 .header-center {
     flex: 1;
     display: flex;
@@ -359,7 +303,6 @@ p {
     align-items: center;
     max-width: 500px;
     margin: 0 30px;
-    color: #0A1A2F;
 }
 
 .search-bar {
@@ -391,7 +334,7 @@ p {
     background-color: #33B7FF;
 }
 
-/* LADO DERECHO: LINKS + BOTÓN LOGIN */
+/* Lado derecho */
 .header-right {
     display: flex;
     align-items: center;
@@ -424,26 +367,83 @@ p {
     background-color: #33B7FF;
 }
 
-body {
-    background-color: #F8FAFB;
+/* ===============================
+   TIPOGRAFÍA GENERAL
+================================ */
+h1, h2, h3 {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-weight: 700;
     color: #0A1A2F;
-    line-height: 1.6;
-    scroll-behavior: smooth;
+    margin: 1rem;
+    line-height: 1.2;
 }
 
-nav a {
-    text-decoration: none;
+/* Título principal de portada */
+h1 {
+    font-size: 2.5rem;
+    color: #1E2024 !important;
+    letter-spacing: 11px;
+    text-transform: uppercase;
+    border-left: 6px solid #0037ba;
+    padding-left: 12px;
+    transition: all 0.3s ease;
+}
+
+h1:hover {
+    color: #00E0FF;
+    border-left-color: #007BFF;
+}
+
+p {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
     color: #0A1A2F;
-    font-weight: 500;
-    margin: 0 1rem;
-    transition: color 0.3s ease;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 900px;
+    text-align: left;
+    margin: 0.1rem 0 0.1rem 1rem;
 }
 
-.bg-primary {
-    background-color: #007BFF !important;
+/* ===============================
+   PRODUCTOS (CARDS)
+================================ */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
-/* ----- Tabla de especificaciones ----- */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.card .btn {
+    align-self: center;
+    margin-top: auto;
+}
+
+.card .card-title {
+    text-align: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+/* ===============================
+   TABLAS DE ESPECIFICACIONES
+================================ */
 .tabla-especificaciones {
     background-color: #FFFFFF;
     border-radius: 12px;
@@ -469,5 +469,59 @@ nav a {
     transition: background-color 0.3s ease;
 }
 
-/* Archivo fusionado automáticamente: estilos_fusionados.css */
+/* FORMULARIO DE CONTACTO */
+.contact-card {
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    max-width: 650px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
 
+.contact-card:hover {
+    box-shadow: 0 8px 22px rgba(0, 123, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+.form-title {
+    color: #0A1A2F;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+form .form-control {
+    border-radius: 10px;
+    border: 1px solid #A7B1BC;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+form .form-control:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+/* Botón del formulario */
+form .btn-primary {
+    background-color: #007BFF;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+form .btn-primary:hover {
+    background-color: #33B7FF;
+    box-shadow: 0 6px 16px rgba(0, 224, 255, 0.3);
+}
+
+.alt-action {
+    text-align: center;
+    margin-top: 1.25rem;
+}
