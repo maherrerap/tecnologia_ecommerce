@@ -11,17 +11,83 @@
     <!--CSS-->
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
-<body>
 
-<!--Franja superior-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
-            <img src="../images/cold_tech_logo.png" alt="Logo Cold Tech" width="50" height="50" class="me-2">
-            Cold Tech
-        </a>
-    </div>
-</nav>
+<!--ID único para conectar con productos.js -->
+<body data-id="P0010">
+
+<header style="background-color:#0b1a2b; border-bottom:2px solid #0f304c;">
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid d-flex align-items-center justify-content-between px-4" style="min-height:65px;">
+
+            <!-- IZQUIERDA: LOGO + MENÚ + CARRITO -->
+            <div class="d-flex align-items-center" style="gap:2rem;">
+                <!-- LOGO -->
+                <div class="d-flex align-items-center">
+                    <img src="../images/cold_tech_logo.png"
+                         alt="Cold Tech Logo" style="height:46px;">
+                </div>
+
+                <!-- MENÚ -->
+                <ul class="navbar-nav flex-row align-items-center mb-0" style="gap:1.5rem;">
+                    <li class="nav-item">
+                        <a class="nav-link text-light fw-semibold" style="font-size:14px;" href="../pages/portada.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light fw-semibold" style="font-size:14px;" href="../pages/productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light fw-semibold" style="font-size:14px;" href="Formulario.html">Contáctanos</a>
+                    </li>
+
+                    <!-- BOTÓN DE CARRITO CON IMAGEN -->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light fw-semibold d-flex align-items-center" style="font-size:14px;">
+                            <img src="../images/carrito.png"
+                                 alt="Carrito" style="height:22px; width:22px; margin-right:6px;">
+                            Carrito
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DERECHA: BARRA DE BÚSQUEDA -->
+            <div class="d-flex align-items-center" style="flex:0 0 360px;">
+                <div style="
+                  display:flex;
+                  align-items:center;
+                  width:100%;
+                  height:42px;
+                  box-shadow:0 4px 10px rgba(0,0,0,.15);
+                  border-radius:18px;
+                  background:#ffffff;
+                  overflow:hidden;">
+
+                    <!-- Campo de texto -->
+                    <div class="d-flex align-items-center flex-grow-1 ps-3">
+                        <i class="bi bi-search text-secondary me-2"></i>
+                        <input type="text"
+                               placeholder="Buscar producto, categoría o marca..."
+                               style="border:none; outline:none; background:transparent; width:100%; font-size:13px;">
+                    </div>
+
+                    <!-- Botón de Buscar-->
+                    <button type="button"
+                            style="
+                          background-color:#0b1a2b;
+                          color:white;
+                          border:none;
+                          height:100%;
+                          padding:0 16px;
+                          font-size:13px;
+                          border-radius:0 18px 18px 0;
+                          margin:0;">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <!--Detalle del Producto-->
 <div class="container">
@@ -29,11 +95,11 @@
 
         <!--Imagenes pequeñas a la izquierda-->
         <div class="col-2 d-flex flex-column align-items-start">
-            <img src="../images/MSIvector/vector1.png" class="img-thumbnail" alt="Iphone 1" style="max-width: 100px;">
-            <img src="../images/MSIvector/vector2.png" class="img-thumbnail" alt="Iphone 2" style="max-width: 100px;">
-            <img src="../images/MSIvector/vector3.png" class="img-thumbnail" alt="Iphone 3" style="max-width: 100px;">
-            <img src="../images/MSIvector/vector4.png" class="img-thumbnail" alt="Iphone 4" style="max-width: 100px;">
-            <img src="../images/MSIvector/vector5.png" class="img-thumbnail" alt="Iphone 5" style="max-width: 100px;">
+            <img src="../images/MSIvector/vector1.png" class="img-thumbnail" alt="vector1" style="max-width: 100px;">
+            <img src="../images/MSIvector/vector2.png" class="img-thumbnail" alt="vector2" style="max-width: 100px;">
+            <img src="../images/MSIvector/vector3.png" class="img-thumbnail" alt="vector3" style="max-width: 100px;">
+            <img src="../images/MSIvector/vector4.png" class="img-thumbnail" alt="vector4" style="max-width: 100px;">
+            <img src="../images/MSIvector/vector5.png" class="img-thumbnail" alt="vector5" style="max-width: 100px;">
         </div>
 
         <!-- Imagen principal con breve información -->
@@ -50,98 +116,33 @@
                     <h2 class="fw-bold">MSI Vector A18 HX</h2>
                     <h4 class="text-primary fw-bold">$2,999.99</h4>
                     <p class="text-muted mb-3">
-                        La MSI Vector A18 HX combina un AMD Ryzen 9 9955HX, RTX 5080, 32 GB DDR5 y pantalla QHD+ 240 Hz en un diseño metálico elegante. Potente, veloz y lista para gaming profesional o trabajo intensivo
+                        La MSI Vector A18 HX combina un AMD Ryzen 9 9955HX, RTX 5080, 32 GB DDR5 y pantalla QHD+ 240 Hz en un diseño metálico elegante. Potente, veloz y lista para gaming profesional o trabajo intensivo.
                     </p>
 
                     <div class="d-flex gap-3 mt-3">
                         <button class="btn btn-primary">Añadir al carrito</button>
-
                     </div>
-
                 </div>
 
             </div>
         </div>
-
     </div>
 </div>
 
-<!--Especificaciones tecnicas-->
+<!--Contenedor para la tabla generada con DOM -->
 <div class="text-center mt-3">
     <button class="btn btn-primary fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#specsTable">
         Especificaciones
     </button>
 
     <div class="collapse mt-4" id="specsTable">
-        <table class="table table-striped table-bordered table-sm shadow-soft tabla-especificaciones">
-            <thead class="table-light">
-            <tr>
-                <th class="text-center">Categoría</th>
-                <th class="text-start">Especificación</th>
-            </tr>
-            </thead>
-            <tbody class="text-start">
-            <tr>
-                <td class="text-center">Modelo</td>
-                <td>MSI Vector A18 HX</td>
-            </tr>
-            <tr>
-                <td class="text-center">Procesador (CPU)</td>
-                <td>AMD Ryzen™ 9 9955HX (16 núcleos / 32 hilos, hasta 5.6 GHz, 80 MB caché total)</td>
-            </tr>
-            <tr>
-                <td class="text-center">Gráficos (GPU)</td>
-                <td>NVIDIA® GeForce RTX™ 5080 con 16 GB GDDR7 VRAM</td>
-            </tr>
-            <tr>
-                <td class="text-center">Memoria RAM</td>
-                <td>32 GB DDR5 (2 × 16 GB, expandible hasta 96 GB)</td>
-            </tr>
-            <tr>
-                <td class="text-center">Almacenamiento</td>
-                <td>SSD NVMe PCIe Gen4 de 1 TB (soporte para expansión)</td>
-            </tr>
-            <tr>
-                <td class="text-center">Pantalla</td>
-                <td>18″ QHD+ (2560 × 1600), 240 Hz, 100 % DCI-P3, antirreflejo</td>
-            </tr>
-            <tr>
-                <td class="text-center">Sistema de Enfriamiento</td>
-                <td>Cooler Boost 5 con cámara de vapor y 6 tubos de calor</td>
-            </tr>
-            <tr>
-                <td class="text-center">Puertos</td>
-                <td>2 × USB-C (uno con DisplayPort y Power Delivery), 3 × USB-A 3.2, HDMI 2.1, RJ-45, lector microSD</td>
-            </tr>
-            <tr>
-                <td class="text-center">Audio</td>
-                <td>Altavoces estéreo con sonido Hi-Res y Nahimic 3D</td>
-            </tr>
-            <tr>
-                <td class="text-center">Teclado</td>
-                <td>RGB por tecla SteelSeries, con zona numérica y control macro</td>
-            </tr>
-            <tr>
-                <td class="text-center">Material del chasis</td>
-                <td>Aleación de aluminio cepillado con diseño angular Vector Series</td>
-            </tr>
-            <tr>
-                <td class="text-center">Peso</td>
-                <td>Aprox. 3.1 kg</td>
-            </tr>
-            <tr>
-                <td class="text-center">Batería</td>
-                <td>99.9 Wh Li-Ion, cargador 280 W</td>
-            </tr>
-            <tr>
-                <td class="text-center">Sistema Operativo</td>
-                <td>Windows 11 Home / Pro (64 bits)</td>
-            </tr>
-            </tbody>
-        </table>
+        <div id="tablaEspecificaciones"></div>
     </div>
 </div>
 
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../scripts/productos.js"></script>
+<script src="../scripts/mostrarEspecificaciones.js"></script>
 </body>
 </html>
