@@ -251,7 +251,7 @@ footer {
 }
 
 footer a {
-    color: #0A1A2F;
+    color: white;
     margin: 0 0.5rem;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -763,4 +763,124 @@ form .btn-primary:hover {
 .alt-action {
     text-align: center;
     margin-top: 1.25rem;
+}
+
+
+
+/* LOGIN */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #EAF4FF 0%, #F8FAFB 100%);
+    padding: 1rem;
+}
+
+/* ---- Tarjeta principal ---- */
+.login-card {
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.15);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 36px rgba(0, 123, 255, 0.25);
+}
+
+/* ---- Título y subtítulo ---- */
+.login-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0A1A2F;
+    margin-bottom: 0.5rem;
+}
+
+.login-title span {
+    color: #007BFF;
+}
+
+.login-subtitle {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* ---- Campos ---- */
+.input-group {
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #0A1A2F;
+    margin-bottom: 0.4rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1.8px solid #A7B1BC;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15);
+}
+
+/* ---- Botón ---- */
+.btn-login {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #0A1A2F, #007BFF);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+}
+
+.btn-login:hover {
+    background: linear-gradient(135deg, #007BFF, #33B7FF);
+    box-shadow: 0 6px 18px rgba(0, 224, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+/* ---- Enlace inferior ---- */
+.alt-action {
+    margin-top: 1.2rem;
+}
+
+.alt-action a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.alt-action a:hover {
+    color: #33B7FF;
+    text-decoration: underline;
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .login-title {
+        font-size: 1.5rem;
+    }
 }
