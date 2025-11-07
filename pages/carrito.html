@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../lib/css/bootstrap.css">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión | Cold Tech</title>
+    <!-- JQUERY CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Estilos propios -->
     <link rel="stylesheet" href="../styles/styles.css">
+
 </head>
 <body>
 
@@ -78,9 +84,9 @@
 
                 <!-- BOTÓN INICIAR SESIÓN -->
                 <a type="button"
-                   class="btn btn-outline-light fw-semibold"
-                   style="font-size:13px; padding:6px 14px; border-radius:18px;"
-                   href="login.html">
+                        class="btn btn-outline-light fw-semibold"
+                        style="font-size:13px; padding:6px 14px; border-radius:18px;"
+                        href="login.html">
                     Iniciar sesión
                 </a>
             </div>
@@ -88,30 +94,78 @@
     </nav>
 </header>
 
-<section class="login-section">
-    <div class="login-card">
-        <h2 class="login-title">Bienvenido a <span>ColdTech</span></h2>
-        <p class="login-subtitle">Inicia sesión para continuar</p>
+<main class = "container-fluid py-4" style = "background-color: #f4f5f7; min-height:70vh;">
+    <div class="row align-items-center mb-4 px-4">
+        <!-- Se incluye el título y el icono -->
+        <div class="col-6 d-flex align-items-center gap-2">
+            <h2 class="mb-0" style="font-weight: 600; color:#0a1a2f;">Carrito de Compras</h2>
+            <img src="../images/carrito.png" alt="carrito" style="height: 26px;">
+        </div>
 
-        <form id="login-form">
-            <div class="input-group">
-                <label for="username">Usuario o correo</label>
-                <input type="text" id="username" name="username" placeholder="Ingresa tu usuario o correo" required>
-            </div>
-
-            <div class="input-group">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
-            </div>
-
-            <button type="submit" class="btn-primary btn-login">Entrar</button>
-
-            <div class="alt-action">
-                <a href="#">¿Olvidaste tu contraseña?</a>
-            </div>
-        </form>
+        <div class="col-6 text-end">
+            <a href="productos.html" class="text-muted" style="font-size:13px;">
+                Volver al Catálogo...
+            </a>
+        </div>
     </div>
-</section>
+
+    <!-- Estructuramos las columnas de datos -->
+    <div class="row px-4">
+        <!-- Columna izquierda: lista de productos -->
+        <div class="col-lg-8 mb-4">
+            <!-- Tarjeta del producto -->
+            <div class="bg-white rounded-3 shadow-sm d-flex align-items-center p-4 mb-3" style="border:1px solid #e2e2e2;">
+                <!-- imagen -->
+                <div class="me-4">
+                    <img src="../images/iphone_17.jpg" alt="iPhone 17"
+                         style="width:140px; height:auto; border-radius:12px; object-fit:cover;">
+                </div>
+
+                <!-- info del producto -->
+                <div class="flex-grow-1">
+                    <h5 class="mb-2" style="color:#0a1a2f; font-weight:600;">iPhone 17</h5>
+                    <p class="mb-3 precio" data-unit="1199" style="color:#0060af; font-weight:600;">$1,199.00</p>
+
+                    <!-- controles de cantidad -->
+                    <div class="d-flex align-items-center gap-3 cantidad_control" >
+                        <button class="btn btn-light border rounded-circle px-2 py-1 btn_restar" style="width:34px; height:34px;">-</button>
+                        <span class="cantidad">1</span>
+                        <button class="btn btn-light border rounded-circle px-2 py-1 btn_sumar" style="width:34px; height:34px;" >+</button>
+                    </div>
+                </div>
+
+                <!-- botón eliminar -->
+                <div class="ms-3">
+                    <button class="btn btn-light border-0 d-flex align-items-center justify-content-center"
+                            style="width:40px; height:40px; border-radius:50%; background:#f4f5f7;">
+                        <img src="../images/basurero.png" alt="Eliminar" style="width:22px; height:22px;">
+                    </button>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <a class="btn btn-primary px-4 py-2 d-flex align-items-center justify-content-center mx-auto" style="background-color:#0b1a2b; border:none; border-radius:10px; gap:8px;" href="productos.html">
+                    <img src="../images/carrito.png" alt="carrito" style="width:20px;height:20px;">
+                    <span class="fw-semibold">Comprar Más</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="bg-white rounded-3 shadow-sm p-4" style="border:1px solid #e2e2e2;">
+                <!-- Titulo -->
+                <h4 class="mb-4" style="color:#0a1a2f; font-weight:700;">Sub-Total</h4>
+
+                <!-- Monto Total -->
+                <p id="subtotal" class="mb-1" style="font-size:22px; font-weight:700; color:#0a1a2f;">$1,199.00</p>
+
+                <!-- Boton para pagar con tarjeta -->
+                <button class="btn w-100 mb-3" style="background: #1fb141; color:white; font-weight:600; height:42px; border-radius:9px;">
+                    Pagar con Tarjeta
+                </button>
+            </div>
+        </div>
+    </div>
+
+</main>
 
 <footer class="text-center p-4" style="background-color: #0A1A2F; color: white;">
     <p class="mb-1" id="texto_footer">@ 2025 ColdTech Inc. | Todos los Derechos Reservados</p>
@@ -121,5 +175,7 @@
             class="bi bi-instagram">cuenta_instagram</i></a>
     <a href="#" class="text-white"><img src="../images/X_logo.png" alt="X_logo" height="30"><i class="bi bi-twitter-x">cuenta_X</i></a>
 </footer>
+
+<script src="../scripts/carrito_dom.js"></script>
 </body>
 </html>
