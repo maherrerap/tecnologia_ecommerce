@@ -9,47 +9,20 @@
     <link rel="stylesheet" href="../lib/css/bootstrap.css">
     <!-- Estilos generales -->
     <link rel="stylesheet" href="../styles/styles.css">
-
-    <style>
-        /* ==== Ajustes específicos para la página de contacto ==== */
-        .contact-page h1.section-title {
-            border: none !important; /* elimina la línea azul */
-            padding-left: 0 !important;
-            text-align: center;
-            font-size: 2.5rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #0A1A2F;
-            margin-bottom: 2rem;
-        }
-
-        .contact-card {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Asegura espacio vertical entre header y formulario */
-        .contact-section {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-        }
-    </style>
 </head>
 
 <body class="bg-light">
+
 <header style="background-color:#0b1a2b; border-bottom:2px solid #0f304c;">
     <nav class="navbar navbar-dark">
         <div class="container-fluid d-flex align-items-center justify-content-between px-4" style="min-height:65px;">
 
-            <!-- IZQUIERDA: LOGO + MENÚ + CARRITO -->
             <div class="d-flex align-items-center" style="gap:2rem;">
                 <!-- LOGO -->
                 <div class="d-flex align-items-center">
-                    <img src="../images/cold_tech_logo.png"
-                         alt="Cold Tech Logo" style="height:46px;">
+                    <img src="../images/cold_tech_logo.png" alt="Cold Tech Logo" style="height:46px;">
                 </div>
 
-                <!-- MENÚ -->
                 <ul class="navbar-nav flex-row align-items-center mb-0" style="gap:1.5rem;">
                     <li class="nav-item">
                         <a class="nav-link text-light fw-semibold" style="font-size:14px;" href="../pages/portada.html">Inicio</a>
@@ -60,106 +33,109 @@
                     <li class="nav-item">
                         <a class="nav-link text-light fw-semibold" style="font-size:14px;" href="Formulario.html">Contáctanos</a>
                     </li>
-
-                    <!-- BOTÓN DE CARRITO CON IMAGEN -->
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-light fw-semibold d-flex align-items-center" style="font-size:14px;">
-                            <img src="../images/carrito.png"
-                                 alt="Carrito" style="height:22px; width:22px; margin-right:6px;">
+                        <a href="carrito.html" class="nav-link text-light fw-semibold d-flex align-items-center" style="font-size:14px;">
+                            <img src="../images/carrito.png" alt="Carrito" style="height:22px; width:22px; margin-right:6px;">
                             Carrito
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <!-- DERECHA: BARRA DE BÚSQUEDA -->
-            <div class="d-flex align-items-center" style="flex:0 0 360px;">
+            <div class="d-flex align-items-center" style="gap:1rem;">
                 <div style="
-                  display:flex;
-                  align-items:center;
-                  width:100%;
-                  height:42px;
-                  box-shadow:0 4px 10px rgba(0,0,0,.15);
-                  border-radius:18px;
-                  background:#ffffff;
-                  overflow:hidden;">
-
-                    <!-- Campo de texto -->
+          display:flex;
+          align-items:center;
+          width:320px;
+          height:42px;
+          box-shadow:0 4px 10px rgba(0,0,0,.15);
+          border-radius:18px;
+          background:#ffffff;
+          overflow:hidden;">
                     <div class="d-flex align-items-center flex-grow-1 ps-3">
                         <i class="bi bi-search text-secondary me-2"></i>
                         <input type="text"
                                placeholder="Buscar producto, categoría o marca..."
                                style="border:none; outline:none; background:transparent; width:100%; font-size:13px;">
                     </div>
-
-                    <!-- Botón de Buscar-->
                     <button type="button"
                             style="
-                          background-color:#0b1a2b;
-                          color:white;
-                          border:none;
-                          height:100%;
-                          padding:0 16px;
-                          font-size:13px;
-                          border-radius:0 18px 18px 0;
-                          margin:0;">
+                    background-color:#0b1a2b;
+                    color:white;
+                    border:none;
+                    height:100%;
+                    padding:0 16px;
+                    font-size:13px;
+                    border-radius:0 18px 18px 0;
+                    margin:0;">
                         Buscar
                     </button>
                 </div>
+
+                <a type="button"
+                        class="btn btn-outline-light fw-semibold"
+                        style="font-size:13px; padding:6px 14px; border-radius:18px;"
+                        href="../pages/login.html">
+                    Iniciar sesión
+                </a>
             </div>
         </div>
     </nav>
 </header>
 
-<!-- ===== FORMULARIO ===== -->
 <section class="container contact-section contact-page">
     <h1 class="section-title">Contáctanos</h1>
 
-    <form id="contact-form" class="shadow-soft bg-white p-4 rounded-3 contact-card">
-        <!-- Datos personales -->
+    <p class="intro-text">
+        Completa el siguiente formulario para comunicarte con nuestro equipo de soporte o ventas.<br>
+        Responderemos en menos de 24 horas.
+    </p>
+
+    <form id="contact-form" class="shadow-soft bg-white p-4 rounded-3 contact-card" novalidate>
         <fieldset class="mb-4">
             <legend class="text-primary fw-bold mb-3">Tus datos</legend>
 
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label for="firstName" class="form-label">Nombre</label>
+                    <label for="firstName" class="form-label">Nombre<span class="required">*</span></label>
                     <input id="firstName" name="first_name" type="text" class="form-control"
                            placeholder="Tu nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}">
                 </div>
 
                 <div class="col-md-6">
-                    <label for="lastName" class="form-label">Apellido</label>
+                    <label for="lastName" class="form-label">Apellido<span class="required">*</span></label>
                     <input id="lastName" name="last_name" type="text" class="form-control"
                            placeholder="Tu apellido" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}">
                 </div>
 
                 <div class="col-12">
-                    <label for="email" class="form-label">Correo electrónico</label>
+                    <label for="email" class="form-label">Correo electrónico<span class="required">*</span></label>
                     <input id="email" name="email" type="email" class="form-control"
                            placeholder="tucorreo@ejemplo.com" required>
                 </div>
 
                 <div class="col-12">
-                    <label for="phone" class="form-label">Teléfono celular</label>
+                    <label for="phone" class="form-label">Teléfono celular<span class="required">*</span></label>
                     <input id="phone" name="phone" type="tel" class="form-control"
                            placeholder="+593 99 999 9999" required pattern="(\+593|0)[0-9\s]{8,12}">
                 </div>
             </div>
         </fieldset>
 
-        <!-- Mensaje -->
         <fieldset class="mb-4">
             <legend class="text-primary fw-bold mb-3">Mensaje</legend>
             <div>
-                <label for="message" class="form-label">Cuéntanos en qué podemos ayudarte</label>
+                <label for="message" class="form-label">Cuéntanos en qué podemos ayudarte<span class="required">*</span></label>
                 <textarea id="message" name="message" rows="5" class="form-control"
                           placeholder="Escribe tu mensaje aquí..." required minlength="10"></textarea>
             </div>
         </fieldset>
 
-        <!-- Botón -->
         <div class="text-center">
-            <button type="submit" class="btn btn-primary px-4">Enviar mensaje</button>
+            <button id="submit-btn" type="submit" class="btn btn-primary px-4" disabled>Enviar mensaje</button>
+            <div id="success-message" class="success-message">
+                Tu mensaje ha sido enviado correctamente. Gracias por contactarnos.
+            </div>
         </div>
 
         <p class="text-center mt-3">
@@ -169,15 +145,15 @@
     </form>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer class="text-center p-4" style="background-color: #0A1A2F; color: white;">
     <p class="mb-1" id="texto_footer">@ 2025 ColdTech Inc. | Todos los Derechos Reservados</p>
-    <a href="#" class="text-white me-3"><img src="../images/facebook.png" alt="facebook" height="30"> cuenta_facebook</a>
-    <a href="#" class="text-white me-3"><img src="../images/instagram.png" alt="instagram" height="30"> cuenta_instagram</a>
-    <a href="#" class="text-white"><img src="../images/X_logo.png" alt="X_logo" height="30"> cuenta_X</a>
+    <a href="#" class="text-white me-3"><img src="../images/facebook.png" alt="facebook" height="30"><i
+            class="bi bi-facebook">Cuenta_facebook</i></a>
+    <a href="#" class="text-white me-3"><img src="../images/instagram.png" alt="instagram" height="30"><i
+            class="bi bi-instagram">cuenta_instagram</i></a>
+    <a href="#" class="text-white"><img src="../images/X_logo.png" alt="X_logo" height="30"><i class="bi bi-twitter-x">cuenta_X</i></a>
 </footer>
 
-<!-- ===== SCRIPTS ===== -->
 <script src="../lib/js/bootstrap.bundle.js"></script>
 <script src="../scripts/formulario.js"></script>
 </body>
