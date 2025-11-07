@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form");
-    const submitBtn = document.getElementById("submit-btn");
-    const successMsg = document.getElementById("success-message");
-
     if (!form) return;
 
     const inputs = {
@@ -20,36 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
         phone: /^(\+593|0)[0-9\s]{8,12}$/,
     };
 
-    // 🔹 Función para verificar si todos los campos son válidos
-    const checkFormValidity = () => {
-        const allValid =
-            patterns.name.test(inputs.firstName.value.trim()) &&
-            patterns.name.test(inputs.lastName.value.trim()) &&
-            patterns.email.test(inputs.email.value.trim()) &&
-            patterns.phone.test(inputs.phone.value.trim()) &&
-            inputs.message.value.trim().length >= 10;
-
-        submitBtn.disabled = !allValid;
-    };
-
-    // 🔹 Limpia errores al escribir y verifica validez en tiempo real
+    // Limpia los mensajes nativos para usar los nuestros
     Object.values(inputs).forEach(input => {
         input.addEventListener("input", () => {
             input.setCustomValidity("");
             input.classList.remove("is-invalid", "is-valid");
-            checkFormValidity();
         });
     });
 
-    // 🔹 Escucha el envío del formulario
+    // Escucha el envío
     form.addEventListener("submit", (e) => {
-        // ✅ Si el formulario no es válido según HTML5, dejamos que el navegador muestre las burbujas nativas
-        if (!form.checkValidity()) {
-            return; // No se previene el envío para permitir las burbujas HTML5
-        }
-
-        // Si pasa las validaciones HTML5, ahora sí evitamos el envío real
-        e.preventDefault();
+        e.preventDefault(); // evita recargar
 
         let isValid = true;
 
@@ -88,34 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
             isValid = false;
         }
 
-        // === Mostrar burbujas HTML5 si algo falla ===
+        // === Mostrar errores nativos del navegador ===
         if (!isValid) {
-            form.reportValidity();
+            form.reportValidity(); // activa las burbujas nativas (HTML5)
             return;
         }
 
         // === Si todo es válido ===
         Object.values(inputs).forEach(i => i.classList.add("is-valid"));
+        <!-- alert("¡Formulario enviado correctamente!\n(En una versión futura se enviará a la base de datos Cold Tech)");
 
-        // Desactivar botón temporalmente
-        submitBtn.disabled = true;
-
-        // Mostrar mensaje de éxito visual
-        successMsg.style.display = "block";
-
-        // Ocultar mensaje después de 5 segundos
-        setTimeout(() => {
-            successMsg.style.display = "none";
-        }, 5000);
-
-        // Limpiar formulario y clases
-        form.reset();
-        Object.values(inputs).forEach(i => i.classList.remove("is-valid", "is-invalid"));
-
-        // Verificar validez para mantener el botón desactivado
-        checkFormValidity();
+        form.reset();-->
     });
-
-    // Inicializar estado del botón al cargar
-    checkFormValidity();
 });
