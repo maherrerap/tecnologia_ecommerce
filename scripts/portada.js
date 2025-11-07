@@ -4,12 +4,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 
-    // Referencia al botón
-    const button = document.getElementById("btn-actionjd");
-
-    button.addEventListener('click', function (event) {
-        console.log("clicked");
-    })
 
 
     // Verificar que el botón exista
