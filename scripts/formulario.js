@@ -74,8 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // === Si todo es válido ===
         Object.values(inputs).forEach(i => i.classList.add("is-valid"));
-        alert("¡Formulario enviado correctamente!\n(En una versión futura se enviará a la base de datos Cold Tech)");
+        <!-- alert("¡Formulario enviado correctamente!\n(En una versión futura se enviará a la base de datos Cold Tech)");
 
-        form.reset();
+        form.reset();-->
     });
 });

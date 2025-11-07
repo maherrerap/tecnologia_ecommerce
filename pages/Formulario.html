@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cold Tech — Contáctanos</title>
 
+    <!-- JQUERY CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
     <!-- Bootstrap local -->
     <link rel="stylesheet" href="../lib/css/bootstrap.css">
     <!-- Estilos generales -->
@@ -40,7 +44,6 @@
 <header style="background-color:#0b1a2b; border-bottom:2px solid #0f304c;">
     <nav class="navbar navbar-dark">
         <div class="container-fluid d-flex align-items-center justify-content-between px-4" style="min-height:65px;">
-
             <!-- IZQUIERDA: LOGO + MENÚ + CARRITO -->
             <div class="d-flex align-items-center" style="gap:2rem;">
                 <!-- LOGO -->
@@ -115,58 +118,63 @@
 <section class="container contact-section contact-page">
     <h1 class="section-title">Contáctanos</h1>
 
-    <form id="contact-form" class="shadow-soft bg-white p-4 rounded-3 contact-card">
-        <!-- Datos personales -->
-        <fieldset class="mb-4">
-            <legend class="text-primary fw-bold mb-3">Tus datos</legend>
+    <div id = "cambiar_jquery">
+        <form id="contact-form" class="shadow-soft bg-white p-4 rounded-3 contact-card">
+            <!-- Datos personales -->
+            <fieldset class="mb-4">
+                <legend class="text-primary fw-bold mb-3">Tus datos</legend>
 
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label for="firstName" class="form-label">Nombre</label>
-                    <input id="firstName" name="first_name" type="text" class="form-control"
-                           placeholder="Tu nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}">
-                </div>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">Nombre</label>
+                        <input id="firstName" name="first_name" type="text" class="form-control"
+                               placeholder="Tu nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}">
+                    </div>
 
-                <div class="col-md-6">
-                    <label for="lastName" class="form-label">Apellido</label>
-                    <input id="lastName" name="last_name" type="text" class="form-control"
-                           placeholder="Tu apellido" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}">
-                </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Apellido</label>
+                        <input id="lastName" name="last_name" type="text" class="form-control"
+                               placeholder="Tu apellido" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}">
+                    </div>
 
-                <div class="col-12">
-                    <label for="email" class="form-label">Correo electrónico</label>
-                    <input id="email" name="email" type="email" class="form-control"
-                           placeholder="tucorreo@ejemplo.com" required>
-                </div>
+                    <div class="col-12">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input id="email" name="email" type="email" class="form-control"
+                               placeholder="tucorreo@ejemplo.com" required>
+                    </div>
 
-                <div class="col-12">
-                    <label for="phone" class="form-label">Teléfono celular</label>
-                    <input id="phone" name="phone" type="tel" class="form-control"
-                           placeholder="+593 99 999 9999" required pattern="(\+593|0)[0-9\s]{8,12}">
+                    <div class="col-12">
+                        <label for="phone" class="form-label">Teléfono celular</label>
+                        <input id="phone" name="phone" type="tel" class="form-control"
+                               placeholder="+593 99 999 9999" required pattern="(\+593|0)[0-9\s]{8,12}">
+                    </div>
                 </div>
+            </fieldset>
+
+            <!-- Mensaje -->
+            <fieldset class="mb-4">
+                <legend class="text-primary fw-bold mb-3">Mensaje</legend>
+                <div>
+                    <label for="message" class="form-label">Cuéntanos en qué podemos ayudarte</label>
+                    <textarea id="message" name="message" rows="5" class="form-control"
+                              placeholder="Escribe tu mensaje aquí..." required minlength="10"></textarea>
+                </div>
+            </fieldset>
+
+            <!-- Botón -->
+            <div class="text-center" id = "btn_mensaje">
+                <button type="submit" class="btn btn-primary px-4">Enviar mensaje</button>
             </div>
-        </fieldset>
 
-        <!-- Mensaje -->
-        <fieldset class="mb-4">
-            <legend class="text-primary fw-bold mb-3">Mensaje</legend>
-            <div>
-                <label for="message" class="form-label">Cuéntanos en qué podemos ayudarte</label>
-                <textarea id="message" name="message" rows="5" class="form-control"
-                          placeholder="Escribe tu mensaje aquí..." required minlength="10"></textarea>
-            </div>
-        </fieldset>
+            <p class="text-center mt-3">
+                ¿Prefieres correo? Escríbenos a
+                <a href="mailto:soporte@coldtech.com" class="text-primary">soporte@coldtech.com</a>
+            </p>
+        </form>
+    </div>
 
-        <!-- Botón -->
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary px-4">Enviar mensaje</button>
-        </div>
+    <div class="alert alert-warning" role="alert" id = "cambio"></div>
 
-        <p class="text-center mt-3">
-            ¿Prefieres correo? Escríbenos a
-            <a href="mailto:soporte@coldtech.com" class="text-primary">soporte@coldtech.com</a>
-        </p>
-    </form>
 </section>
 
 <!-- ===== FOOTER ===== -->
@@ -178,6 +186,7 @@
 </footer>
 
 <!-- ===== SCRIPTS ===== -->
+<script src="../scripts/dom_jquery.js"></script>
 <script src="../lib/js/bootstrap.bundle.js"></script>
 <script src="../scripts/formulario.js"></script>
 </body>
