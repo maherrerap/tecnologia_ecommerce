@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iPhone 17 - Cold Tech</title>
 
+    <!-- JQUERY CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -83,7 +87,6 @@
         <!-- Carrusel e info -->
         <div class="col-md-10">
             <div class="row align-items-center">
-                <!-- Carrusel -->
                 <div class="col-md-6 d-flex justify-content-center">
                     <div id="carouselExampleIndicators" class="carousel slide w-100" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -130,7 +133,10 @@
                     <p class="text-muted mb-3">
                         El iPhone 17 combina diseño premium y potencia excepcional con el nuevo chip A19 Bionic, pantalla OLED LTPO Super Retina XDR y cámaras profesionales de 48 MP. Su cuerpo de titanio pulido ofrece ligereza y resistencia, mientras que iOS 26 con IA optimiza el rendimiento y la eficiencia energética.
                     </p>
-                    <button class="btn btn-primary">Añadir al carrito</button>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <button class="btn btn-primary btn-add-cart" data-id="1">Añadir al carrito</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -170,9 +176,16 @@
 </footer>
 
 <!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- 1. primero la lista de productos -->
 <script src="../scripts/productos.js"></script>
+
+<!-- 2. luego los que usan esa lista -->
+<script src="../scripts/catalogo_prod.js"></script>
+<script src="../scripts/carrito_storage.js"></script>
 <script src="../scripts/mostrarEspecificaciones.js"></script>
+
+<!-- 3. bootstrap puede ir al final si no lo usas en los js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

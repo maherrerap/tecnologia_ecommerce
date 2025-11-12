@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dell Alienware AW3423DW - Cold Tech</title>
 
+    <!-- JQUERY CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS -->
+    <!--CSS-->
     <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../lib/bootstrap-icons/bootstrap-icons.css">
-
 </head>
+<body data-id="P0007">
 
 <header class="header-coldtech">
     <nav class="navbar navbar-dark">
@@ -35,6 +37,8 @@
                     <li class="nav-item">
                         <a class="nav-link nav-link-coldtech fw-semibold" href="Formulario.html">Contáctanos</a>
                     </li>
+
+                    <!-- BOTÓN DE CARRITO -->
                     <li class="nav-item">
                         <a href="carrito.html" class="nav-link text-light fw-semibold d-flex align-items-center" style="font-size:14px;">
                             <img src="../images/carrito.png" alt="Carrito" style="height:22px; width:22px; margin-right:6px;">
@@ -64,12 +68,6 @@
         </div>
     </nav>
 </header>
-
-
-
-
-<!-- Aquí va el ID del producto-->
-<body data-id="P0007">
 
 <!--Detalle del Producto -->
 <div class="container mt-4">
@@ -128,21 +126,28 @@
                     </div>
                 </div>
 
-                <!-- Info -->
+                <!-- Texto de producto -->
                 <div class="col-md-6 text-start">
                     <h2 class="fw-bold">Dell Alienware AW3423DW (QD-OLED Ultrawide Gaming Monitor)</h2>
-                    <h4 class="text-primary fw-bold">$899.99</h4>
+                    <h4 class="text-primary fw-bold">$899,99</h4>
                     <p class="text-muted mb-3">
-                        El Dell Alienware AW3423DW combina tecnología QD-OLED, 175 Hz, 0.1 ms y compatibilidad G-SYNC Ultimate en una pantalla ultrawide curva 34″ (3440×1440) con diseño futurista e iluminación RGB AlienFX.
+                        El Dell Alienware AW3423DW combina tecnología QD-OLED, 175 Hz, 0.1 ms, y compatibilidad G-SYNC Ultimate en una pantalla ultrawide curva 34″ (3440×1440) con diseño futurista e iluminación RGB AlienFX
                     </p>
-                    <button class="btn btn-primary">Añadir al carrito</button>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <button class="btn btn-primary btn-add-cart" data-id="8">Añadir al carrito</button>
+
+                    </div>
+
                 </div>
+
             </div>
         </div>
+
     </div>
 </div>
 
-<!-- 🔹 Tabla generada dinámicamente con jQuery -->
+<!--Especificaciones tecnicas-->
 <div class="text-center mt-3">
     <button class="btn btn-primary fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#specsTable">
         Especificaciones
@@ -176,10 +181,10 @@
 </footer>
 
 <!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../scripts/catalogo_prod.js"></script>
+<script src="../scripts/carrito_storage.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../scripts/productos.js"></script>
 <script src="../scripts/mostrarEspecificaciones.js"></script>
-
 </body>
 </html>

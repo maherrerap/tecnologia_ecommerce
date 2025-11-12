@@ -1,67 +1,129 @@
-$(document).ready(function(){
 
-    function formatear(numero) {
-        // Convierte un numero a su formato de dinero
-        return "$" + Number(numero).toLocaleString("en-US", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
+// Cuando el documento esté listo, se crea el carrito de compras
+$(document).ready(function () {
+    renderCart();
+});
+
+// Función que crea el carrito de compras
+function renderCart() {
+
+    // 1. Traemos lo que haya en localStorage
+    const cart = getCart();
+
+    // 2. Seleccionamos el contenedor donde van las tarjetas
+    const $container = $("#cart-items");
+
+    // 3. Limpiamos lo que haya
+    $container.empty();
+
+    // 4. Si no hay productos, mostramos mensaje y subtotal 0
+    if (cart.length === 0) {
+        $container.append(`<p class="text-muted">Tu carrito está vacío.</p>`);
+        $("#subtotal").text("$0.00");
+        return;
     }
 
-    function actualizarSubtotal(nuevo_valor){
-        // Actualiza el valor del subtotal con el formato creado previamente
-        $("#subtotal").text(formatear(nuevo_valor));
-    }
+    // 5. Si hay productos, se lo recorre.
+    let subtotal = 0;
 
-    // Se programa el boton de aumentar la cantidad del producto
-    $(".btn_sumar").click(function(){
-        // Convertimos al boton en un objeto de jquery para poder usar sus
-        // funciones, buscando en el DOM el elemento más cercano desde arriba
-        // que tenga la clase "cantidad_control"
-        const container = $(this).closest(".cantidad_control");
+    cart.forEach(item => {
 
-        // Una vez encontrado el container, dentro de él se busca a un elemento
-        // dentro de el con la clase "cantidad"
-        const cantidad_span = container.find(".cantidad");
+        subtotal += item.price * item.quantity;
 
-        // Se obtiene el tecto del elemento hijo del container y se lo transforma
-        // el valor a numero para ser operado.
-        let cantidad = parseInt(cantidad_span.text());
-        cantidad++;
-        cantidad_span.text(cantidad);
+        // Armamos la tarjeta con etiquetas bootstrap.
+        const card = `
+        <div class="bg-white rounded-3 shadow-sm d-flex align-items-center p-4 mb-3" style="border:1px solid #e2e2e2;">
+            <!-- Imagen -->
+            <div class="me-4">
+                <img src="${item.image}" alt="${item.name}"
+                     style="width:140px; height:auto; border-radius:12px; object-fit:cover;">
+            </div>
 
-        // Esta seccion se maneja de la misma manera que la primera.
-        const card = $(this).closest(".flex-grow-1");
-        const precio_card = card.find(".precio");
-        // Usa el atributo de data-unit para saber el valor del elemento
-        const unitario = parseFloat(precio_card.data("unit"));
-        const total_producto = unitario * cantidad;
+            <!-- Información del Producto -->
+            <div class="flex-grow-1">
+                <h5 class="mb-2" style="color:#0a1a2f; font-weight:600;">${item.name}</h5>
+                <p class="mb-3 precio" data-unit="${item.price}" style="color:#0060af; font-weight:600;">
+                    $${item.price.toFixed(2)}
+                </p>
 
-        //Mostramos el nuevo precio del producto
-        precio_card.text(formatear(total_producto));
+                <!-- Controles de Cantidad del Producto -->
+                <div class="d-flex align-items-center gap-3 cantidad_control">
+                    <button class="btn btn-light border rounded-circle px-2 py-1 btn_restar"
+                            data-id="${item.id}"
+                            style="width:34px; height:34px;">-</button>
+                    <span class="cantidad">${item.quantity}</span>
+                    <button class="btn btn-light border rounded-circle px-2 py-1 btn_sumar"
+                            data-id="${item.id}"
+                            style="width:34px; height:34px;">+</button>
+                </div>
+            </div>
 
-        //Actualizamos el subtotal
-        actualizarSubtotal(total_producto);
+            <!-- Botón de Eliminar Producto -->
+            <div class="ms-3">
+                <button class="btn btn-light border-0 d-flex align-items-center justify-content-center btn_delete"
+                        data-id="${item.id}"
+                        style="width:40px; height:40px; border-radius:50%; background:#f4f5f7;">
+                    <img src="../images/basurero.png" alt="Eliminar" style="width:22px; height:22px;">
+                </button>
+            </div>
+        </div>
+        `;
 
+        // Lo añadimos al contenedor
+        $container.append(card);
     });
 
-    $(".btn_restar").click(function(){
-        const container = $(this).closest(".cantidad_control");
-        const cantidad_span = container.find(".cantidad");
-        let cantidad = parseInt(cantidad_span.text());
-        if (cantidad > 1) {
-            cantidad--;
-            cantidad_span.text(cantidad);
+    // 6. Se actualiza el subtotal en el panel derecho
+    $("#subtotal").text(`$${subtotal.toFixed(2)}`);
+}
 
 
-            // Esta seccion se maneja de la misma manera que la primera.
-            const card = $(this).closest(".flex-grow-1");
-            const precio_card = card.find(".precio");
-            const unitario = parseFloat(precio_card.data("unit"));
-            const total_producto = unitario * cantidad;
+// =========================
+// MANEJO DE BOTONES
+// =========================
 
-            precio_card.text(formatear(total_producto));
-            actualizarSubtotal(total_producto);
+// Funcionamiento para botón sumar cantidad.
+$("#cart-items").on("click", ".btn_sumar", function () {
+    const id = parseInt($(this).data("id"));
+    let cart = getCart();
+
+    const item = cart.find(p => p.id === id);
+    if (item) {
+        item.quantity += 1;
+        saveCart(cart);
+        renderCart();
+    }
+});
+
+// Funcionamiento para botón restar cantidad.
+$("#cart-items").on("click", ".btn_restar", function () {
+    const id = parseInt($(this).data("id"));
+    let cart = getCart();
+
+    const item = cart.find(p => p.id === id);
+    if (item) {
+        // evitamos que baje de 1
+        if (item.quantity > 1) {
+            item.quantity -= 1;
+            saveCart(cart);
+            renderCart();
         }
-    });
+    }
+});
+
+// Funcionamiento para botón para sacar el producto del carrito.
+
+$("#cart-items").on("click", ".btn_delete", function () {
+    const id = parseInt($(this).data("id"));
+    let cart = getCart();
+
+    // Se filtra para sacar el producto
+    cart = cart.filter(p => p.id === undefined ? false : p.id !== id);
+
+    // Se guarda el carrito actualizado
+    saveCart(cart);
+
+    // Se re-renderiza la vista del carrito
+    renderCart();
+
 })
