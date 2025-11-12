@@ -1,4 +1,24 @@
-// Archivo: productos.js
+// Se usa JQUERY para capturar el clic del carrito, leer él data-id,
+// buscar el producto en products y llamar a addToCart();
+
+$(document).ready(function () {
+    $(".btn-add-cart").click(function () {
+
+        // 1. Se obtiene el ID
+        const idProd = parseInt($(this).data("id"));
+
+        // 2. Se busca en products
+        const prod = products.find(p => p.id === idProd);
+
+        // 3. Se agrega al carrito
+        if (prod) {
+            addToCart(prod);
+        }
+
+    });
+});
+
+// Listas anidadas para la creación de las tablas de especificaciones.
 const productos = [
     {
         id: "P0001",

@@ -86,144 +86,120 @@ const products = [
     }
 ];
 
+/* CREACIÓN DEL CATÁLOGO DEL PRODUCTO UTILIZANDO JQUERY */
 
-// Para saber cuantas filas hay que poner, se haría de la siguiente manera:
-// Longitud de la lista / 4. Se usará la función Math.ceil
-// Esto con el objetivo de saber cuantas class = "row mb-4" se tienen que hacer.
+$(document).ready(function () {
 
-for (let i = 0; i < Math.ceil(products.length/4); i++){
-    const productos_div = document.getElementById("products");
-    const nuevo_div = document.createElement("div");
-    nuevo_div.classList.add("row", "mb-4");
-    productos_div.appendChild(nuevo_div);
-}
+    /**
+     *
+     *  1. Se Crean las filas dinamicamente (row mb-4)
+     *
+     * */
 
-// Una vez creados los div de filas para bootstrap, se procede a crear las cartas
-// dentro de dichos div. Para esto se utilizará la función:
-// document. querySelectorAll(".row"); La cual selecciona todos los elementos del documento que tengan la clase "row"
+    // Se calcula cuántas filas se necesitan según la cantidad de productos / 4
+    const totalFilas = Math.ceil(products.length /4);
 
-const filas_prod = document.querySelectorAll(".row");
+    // Se recorre las filas con un bucle for
 
-// Se recorre todas las filas para añadir el div de la columna
-let contador = 0;
+    for (let i = 0; i < totalFilas; i++) {
 
-filas_prod.forEach(fila => {
-   for (let i = 0; i < 4 && contador < products.length; i++){
-       const nueva_columna = document.createElement("div");
-       nueva_columna.classList.add("col");
-       fila.appendChild(nueva_columna);
-       contador++;
-   }
+        // Se selecciona el contenedor principal donde irán los productos
+        const $productosDiv = $("#products");
+
+        // Se crea dinámicamente un nuevo <div> con clases row y mb-4
+        const $nuevaFila = $("<div></div>").addClass("row mb-4");
+
+        // Se agrega la fila dentro del contendor
+        $productosDiv.append($nuevaFila);
+    }
+
+    /**
+     *
+     * 2. Se crea las columnas dentro de cada fila
+     *
+     */
+
+    // Se seleccionan todas las filas creadas
+    const $filasProd = $(".row");
+    let contador = 0;
+
+    // Se recorre cada filac on .each()
+
+    $filasProd.each(function () {
+
+        // Dentro de cada fila, se agregan hasta 4 columnas
+        for (let i = 0;i < 4 && contador < products.length;i++) {
+            const $nuevaColumna = $("<div></div>").addClass("col");
+            $(this).append($nuevaColumna);
+            contador++;
+        }
+    });
+
+    /**
+     *
+     *  3. Crear las cartas dentro de cada columna
+     *
+     */
+    const $columnasProd = $(".col");
+
+    $columnasProd.each(function () {
+        const $nuevaCarta = $("<div></div>").addClass("card h-100 d-flex flex-column");
+        $(this).append($nuevaCarta);
+    });
+
+    /**
+     *
+     *  4. Insertar imágenes dentro de cada carta
+     *
+     */
+    const $cartasProd = $(".card.h-100.d-flex.flex-column");
+
+    $.each(products, function (index, producto){
+        const $imagen = $("<img>").attr("src", producto.image).attr("alt", producto.name).addClass("card-img-top");
+
+        $cartasProd.eq(index).append($imagen);
+    });
+
+    /**
+     *
+     *  5. Agregar el cuerpo de la carta
+     *
+     */
+
+    $cartasProd.each(function () {
+        const $cuerpocarta = $("<div></div>").addClass("card-body");
+        $(this).append($cuerpocarta);
+    });
+
+    /**
+     *
+     *  6. Añadir el título del producto
+     *
+     */
+    const $cartasBody = $(".card-body");
+
+    $.each(products, function (index, producto){
+        const $titulo = $("<h5></h5>").text(producto.name).addClass("card-title");
+        $cartasBody.eq(index).append($titulo);
+    });
+
+    /**
+     *
+     *  7. Agregar la descripción del producto
+     *
+     */
+    $.each(products, function (index, producto){
+        const $descripcion = $("<p></p>").text(producto.description);
+        $cartasBody.eq(index).append($descripcion);
+    });
+
+    /**
+     *
+     *  8. Agregar botón de "Ver Detalle"
+     *
+     */
+    $.each(products, function (index, producto){
+        const $boton = $("<a></a>").attr("href", producto.link).text("Ver Detalle").addClass("btn btn-primary");
+        $cartasBody.eq(index).append($boton);
+    });
 });
-
-// De igual manera, por cada columna, se tienen que añadir una carta del producto
-
-const columnas_prod = document.querySelectorAll(".col");
-
-// Se recorre todas las columnas para añadir el div de la carta
-
-columnas_prod.forEach(columna => {
-    const nueva_carta = document.createElement("div");
-    nueva_carta.classList.add("card","h-100","d-flex", "flex-column");
-    columna.appendChild(nueva_carta);
-});
-
-// Ahora se procede a insertar las imagenes dentro de cada carta siguiendo el mismo
-// procedimiento que antes
-
-const cartas_prod = document.querySelectorAll(".card.h-100.d-flex.flex-column");
-
-// Se recorre la lista de productos para poner la imagen en ellos
-products.forEach((producto, index) => {
-    const imagenes_prod = document.createElement("img");
-    imagenes_prod.src = producto.image;
-    imagenes_prod.alt = producto.name;
-    imagenes_prod.classList.add("card-img-top");
-
-    cartas_prod[index].appendChild(imagenes_prod);
-});
-
-// Siguiendo la misma lógica de la imagen, se procede a agregar
-// el cuerpo de la carta
-
-cartas_prod.forEach(carta => {
-    const cuerpo_carta = document.createElement("div");
-    cuerpo_carta.classList.add("card-body");
-    carta.appendChild(cuerpo_carta);
-});
-
-// Se añade el título de la carta dentro del div de body
-
-// Por lo que es necesario encontrar todos los div que tengan clase "card-body"
-const cartas_body = document.querySelectorAll(".card-body");
-
-products.forEach((producto, index) => {
-    const titulo_prod = document.createElement("h5");
-    titulo_prod.textContent = producto.name;
-    titulo_prod.classList.add("card-title");
-
-    cartas_body[index].appendChild(titulo_prod);
-});
-
-// Se procede a incluir el texto descriptivo de cada uno
-
-products.forEach((producto, index) => {
-   const descripcion_prod = document.createElement("p");
-   descripcion_prod.textContent = producto.description;
-   cartas_body[index].appendChild(descripcion_prod);
-});
-
-// Se procede a incluir el botón de navegación pertinente
-
-products.forEach((producto, index) => {
-    const boton_detalle = document.createElement("a");
-    boton_detalle.href = producto.link;
-    boton_detalle.textContent = "Ver Detalle";
-    boton_detalle.classList.add("btn", "btn-primary");
-    cartas_body[index].appendChild(boton_detalle);
-});
-
-
-// CLASE 2025/10/31
-
-const bton_clase = document.getElementById("btn-action");
-
-// Se crea un LISTENER
-
-/*
-bton_clase.addEventListener("click", function() {
-    alert("WASAAAAAAAAA");
-})
-*/
-/*
-bton_clase.addEventListener("click", function(event) {
-    alert("Wasaaaa Pt2");
-    console.log(event);
-})
-*/
-/*
-const email_recuperado = document.getElementById("email_clase");
-
-bton_clase.addEventListener("click", function() {
-    alert(email_recuperado.value);
-})
-
-// Escuchador del formulario
-
-const formulario = document.getElementById("email_clase");
-
-formulario.addEventListener("submit",function () {
-    event.preventDefault();
-})
- */
-/*
-const button = document.getElementById("btn-action");
-button.addEventListener("click", function(){
-    alert("el diablaso");
-})*/
-
-/*
-const button = document.getElementById("btn-action");
-button.addEventListener("click", function(event){
-    console.log(event);
-})*/
