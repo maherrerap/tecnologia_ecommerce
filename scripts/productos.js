@@ -1,6 +1,5 @@
 // Archivo: productos.js
 
-
 $(document).ready(function () {
     window.productos = [
         {
