@@ -3,42 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle del Producto</title>
+    <title>Logitech G915 TKL Lightspeed - Cold Tech</title>
+
+    <!-- JQUERY CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!--CSS-->
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../lib/bootstrap-icons/bootstrap-icons.css">
+
 </head>
 
-<!--ID único del producto -->
-<body data-id="P0004">
-
-<header style="background-color:#0b1a2b; border-bottom:2px solid #0f304c;">
+<header class="header-coldtech">
     <nav class="navbar navbar-dark">
-        <div class="container-fluid d-flex align-items-center justify-content-between px-4" style="min-height:65px;">
+        <div class="container-fluid d-flex align-items-center justify-content-between px-4">
 
-            <!-- IZQUIERDA: LOGO + MENÚ + CARRITO -->
-            <div class="d-flex align-items-center" style="gap:2rem;">
-                <!-- LOGO -->
-                <div class="d-flex align-items-center">
-                    <img src="../images/cold_tech_logo.png" alt="Cold Tech Logo" style="height:46px;">
-                </div>
+            <div class="d-flex align-items-center gap-4">
+                <!-- Logo -->
+                <a href="../pages/portada.html" class="d-flex align-items-center">
+                    <img src="../images/cold_tech_logo.png" alt="ColdTech Logo" class="header-logo">
+                </a>
 
-                <!-- MENÚ -->
-                <ul class="navbar-nav flex-row align-items-center mb-0" style="gap:1.5rem;">
+                <!-- Menú de navegación -->
+                <ul class="navbar-nav flex-row align-items-center mb-0 gap-4">
                     <li class="nav-item">
-                        <a class="nav-link text-light fw-semibold" style="font-size:14px;" href="../pages/portada.html">Inicio</a>
+                        <a class="nav-link nav-link-coldtech fw-semibold" href="../pages/portada.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light fw-semibold" style="font-size:14px;" href="../pages/productos.html">Productos</a>
+                        <a class="nav-link nav-link-coldtech fw-semibold" href="../pages/productos.html">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light fw-semibold" style="font-size:14px;" href="Formulario.html">Contáctanos</a>
+                        <a class="nav-link nav-link-coldtech fw-semibold" href="Formulario.html">Contáctanos</a>
                     </li>
-
-                    <!-- BOTÓN DE CARRITO -->
                     <li class="nav-item">
                         <a href="carrito.html" class="nav-link text-light fw-semibold d-flex align-items-center" style="font-size:14px;">
                             <img src="../images/carrito.png" alt="Carrito" style="height:22px; width:22px; margin-right:6px;">
@@ -48,72 +47,89 @@
                 </ul>
             </div>
 
-            <!-- DERECHA: BÚSQUEDA + BOTÓN LOGIN -->
-            <div class="d-flex align-items-center" style="gap:1rem;">
-                <!-- BARRA DE BÚSQUEDA (mover ligeramente a la izquierda) -->
-                <div style="
-          display:flex;
-          align-items:center;
-          width:320px; /* reducido de 360px */
-          height:42px;
-          box-shadow:0 4px 10px rgba(0,0,0,.15);
-          border-radius:18px;
-          background:#ffffff;
-          overflow:hidden;">
-                    <div class="d-flex align-items-center flex-grow-1 ps-3">
-                        <i class="bi bi-search text-secondary me-2"></i>
-                        <input type="text"
-                               placeholder="Buscar producto, categoría o marca..."
-                               style="border:none; outline:none; background:transparent; width:100%; font-size:13px;">
-                    </div>
-                    <button type="button"
-                            style="
-                    background-color:#0b1a2b;
-                    color:white;
-                    border:none;
-                    height:100%;
-                    padding:0 16px;
-                    font-size:13px;
-                    border-radius:0 18px 18px 0;
-                    margin:0;">
-                        Buscar
-                    </button>
-                </div>
+            <div class="d-flex align-items-center gap-3">
 
-                <!-- BOTÓN INICIAR SESIÓN -->
-                <a type="button"
-                        class="btn btn-outline-light fw-semibold"
-                        style="font-size:13px; padding:6px 14px; border-radius:18px;"
-                        href="login.html">
-                    Iniciar sesión
-                </a>
+                <!-- Barra de búsqueda minimalista -->
+                <form class="search-container" role="search">
+                    <input
+                            type="text"
+                            class="search-input"
+                            placeholder="Buscar producto, categoría o marca..."
+                            aria-label="Buscar producto">
+                    <button type="submit" class="search-btn">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+
+                <!-- Botón de inicio de sesión -->
+                <a href="login.html" class="btn btn-login-header fw-semibold">Iniciar sesión</a>
             </div>
         </div>
     </nav>
 </header>
 
-<!--Detalle del Producto-->
-<div class="container">
+
+<body data-id="P0004">
+
+<!-- DETALLE DEL PRODUCTO -->
+<div class="container mt-4">
     <div class="row">
 
-        <!--Imagenes pequeñas a la izquierda-->
-        <div class="col-2 d-flex flex-column align-items-start">
-            <img src="../images/LogitechG915/G1915-1.png" class="img-thumbnail" alt="G915-1" style="max-width: 100px;">
-            <img src="../images/LogitechG915/G1915-2.png" class="img-thumbnail" alt="G915-2" style="max-width: 100px;">
-            <img src="../images/LogitechG915/G1915-3.png" class="img-thumbnail" alt="G915-3" style="max-width: 100px;">
-            <img src="../images/LogitechG915/G1915-4.png" class="img-thumbnail" alt="G915-4" style="max-width: 100px;">
-            <img src="../images/LogitechG915/G1915-5.png" class="img-thumbnail" alt="G915-5" style="max-width: 100px;">
+        <!-- Miniaturas -->
+        <div class="col-12 col-md-2 d-flex flex-column align-items-start align-items-md-center">
+            <img src="../images/LogitechG915/G1915-1.png" class="img-thumbnail" alt="Vista 1" style="max-width:100px;">
+            <img src="../images/LogitechG915/G1915-2.png" class="img-thumbnail" alt="Vista 2" style="max-width:100px;">
+            <img src="../images/LogitechG915/G1915-3.png" class="img-thumbnail" alt="Vista 3" style="max-width:100px;">
+            <img src="../images/LogitechG915/G1915-4.png" class="img-thumbnail" alt="Vista 4" style="max-width:100px;">
+            <img src="../images/LogitechG915/G1915-5.png" class="img-thumbnail" alt="Vista 5" style="max-width:100px;">
         </div>
 
-        <!-- Imagen principal con breve información -->
-        <div class="col">
+        <!-- Carrusel + información -->
+        <div class="col-md-10">
             <div class="row align-items-center">
+
+                <!-- Carrusel Bootstrap -->
                 <div class="col-md-6 d-flex justify-content-center">
-                    <img src="../images/LogitechG915/G1915-1.png" class="img-fluid rounded shadow" alt="Imagen Principal" style="max-width: 400px;">
+                    <div id="carouselG915" class="carousel slide w-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselG915" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carouselG915" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselG915" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#carouselG915" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#carouselG915" data-bs-slide-to="4"></button>
+                        </div>
+
+                        <div class="carousel-inner rounded shadow">
+                            <div class="carousel-item active">
+                                <img src="../images/LogitechG915/G1915-1.png" class="d-block w-100" alt="Vista 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/LogitechG915/G1915-2.png" class="d-block w-100" alt="Vista 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/LogitechG915/G1915-3.png" class="d-block w-100" alt="Vista 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/LogitechG915/G1915-4.png" class="d-block w-100" alt="Vista 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/LogitechG915/G1915-5.png" class="d-block w-100" alt="Vista 5">
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselG915" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselG915" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Texto de producto -->
-                <div class="col-md-6 text-start">
+                <!-- Info del producto -->
+                <div class="col-md-6 text-start mt-3 mt-md-0">
                     <h2 class="fw-bold">Logitech G915 TKL Lightspeed</h2>
                     <h4 class="text-primary fw-bold">$149,99</h4>
                     <p class="text-muted mb-3">
@@ -121,7 +137,7 @@
                     </p>
 
                     <div class="d-flex gap-3 mt-3">
-                        <button class="btn btn-primary">Añadir al carrito</button>
+                        <button class="btn btn-primary btn-add-cart" data-id="5">Añadir al carrito</button>
                     </div>
                 </div>
             </div>
@@ -129,18 +145,43 @@
     </div>
 </div>
 
-<!--Contenedor donde se genera la tabla DOM -->
-<div class="text-center mt-3">
+<!-- ESPECIFICACIONES -->
+<div class="text-center mt-4">
     <button class="btn btn-primary fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#specsTable">
         Especificaciones
     </button>
-
-    <div class="collapse mt-4" id="specsTable">
+    <div class="collapse mt-3" id="specsTable">
         <div id="tablaEspecificaciones"></div>
     </div>
 </div>
 
+<footer class="footer-coldtech">
+    <div class="footer-container">
+        <div class="footer-left">
+            <p id="texto_footer">© 2025 ColdTech Inc. | Todos los Derechos Reservados</p>
+        </div>
+        <div class="footer-right">
+            <a href="#" class="footer-social">
+                <img src="../images/facebook.png" alt="facebook" height="30">
+                <span>cuenta_facebook</span>
+            </a>
+            <a href="#" class="footer-social">
+                <img src="../images/instagram.png" alt="instagram" height="30">
+                <span>cuenta_instagram</span>
+            </a>
+            <a href="#" class="footer-social">
+                <img src="../images/X_logo.png" alt="X_logo" height="30">
+                <span>cuenta_X</span>
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+
 <!-- Scripts -->
+<script src="../scripts/catalogo_prod.js"></script>
+<script src="../scripts/carrito_storage.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../scripts/productos.js"></script>
 <script src="../scripts/mostrarEspecificaciones.js"></script>
