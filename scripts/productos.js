@@ -227,3 +227,6 @@ const productos = [
         ]
     }
 ];
+
+// 2. Lo exponemos al global para que OTROS scripts lo vean
+window.productos = productos;
