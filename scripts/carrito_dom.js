@@ -11,14 +11,14 @@ function renderCart() {
     const cart = getCart();
 
     // 2. Seleccionamos el contenedor donde van las tarjetas
-    const $container = $("#cart-items");
+    const container = $("#cart-items");
 
     // 3. Limpiamos lo que haya
-    $container.empty();
+    container.empty();
 
     // 4. Si no hay productos, mostramos mensaje y subtotal 0
     if (cart.length === 0) {
-        $container.append(`<p class="text-muted">Tu carrito está vacío.</p>`);
+        container.append(`<p class="text-muted">Tu carrito está vacío.</p>`);
         $("#subtotal").text("$0.00");
         return;
     }
@@ -70,7 +70,7 @@ function renderCart() {
         `;
 
         // Lo añadimos al contenedor
-        $container.append(card);
+        container.append(card);
     });
 
     // 6. Se actualiza el subtotal en el panel derecho
