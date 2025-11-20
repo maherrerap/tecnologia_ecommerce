@@ -68,7 +68,7 @@ $(document).ready(function () {
 
                 // Espera breve y redirige a portada.html
                 setTimeout(function () {
-                    window.location.href = "../pages/portada.html";
+                    window.location.href = "../portada.html";
                 }, 1500);
             } else {
                 // Credenciales incorrectas

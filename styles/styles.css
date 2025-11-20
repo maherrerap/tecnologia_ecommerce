@@ -952,81 +952,153 @@ form label.required::after {
     font-weight: bold;
 }
 
-/* -------- SECCIÓN DETALLE DE PRODUCTOS - CARRUSEL Y RESPONSIVIDAD --------- */
+/* =============================================================
+   MINIATURAS (tu estructura real con Bootstrap)
+   ============================================================= */
 
-/* Carrusel */
-/* Ajusta el contenedor y asegura altura uniforme */
-.carousel-inner {
-    height: 400px;
+/* La columna de miniaturas (col-md-2) NO debe estirarse */
+.col-md-2.d-flex.flex-column.gap-2 {
+    max-height: 450px;     /* evita que baje hasta el piso */
+    overflow-y: auto;      /* scroll si hay muchas miniaturas */
+    padding-right: 4px;    /* se ve más limpio */
 }
 
-/* Las imágenes se escalan sin deformarse y se mantienen centradas */
+/* Miniaturas reales dentro de esa columna */
+.col-md-2.d-flex.flex-column.gap-2 img {
+    width: 95px;
+    height: 95px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.2s ease;
+    background: #ffffff;
+}
+
+.col-md-2.d-flex.flex-column.gap-2 img:hover {
+    transform: scale(1.06);
+    border-color: #0A1A2F;
+}
+
+/* =============================================================
+   IMAGEN PRINCIPAL (carrusel)
+   ============================================================= */
+
+.carousel-inner {
+    height: 420px !important; /* mantiene altura fija */
+}
+
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* mantiene proporción del producto sin recortar */
-    background-color: #fff; /* fondo blanco por si hay transparencia */
-    border-radius: 10px;
-    transition: transform 0.2s ease;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #fff;
+    transition: transform .2s ease;
 }
 
-/* Pequeño efecto de zoom al pasar el mouse */
 .carousel-item img:hover {
     transform: scale(1.02);
 }
 
-/* Miniaturas */
-.col-2 img {
-    max-width: 100px;
-    transition: transform 0.2s ease;
-}
+/* =============================================================
+   RESPONSIVO REAL
+   ============================================================= */
 
-.col-2 img:hover {
-    transform: scale(1.05);
-}
+@media (max-width: 992px) {
 
-/* Responsividad General */
-@media (max-width: 768px) {
-    /* Reduce la altura del carrusel */
-    .carousel-inner {
-        height: 300px;
-    }
-
-    /* Las miniaturas se acomodan en fila debajo del carrusel */
-    .col-2 {
+    .col-md-2.d-flex.flex-column.gap-2 {
         flex-direction: row !important;
+        max-height: none;
+        overflow-y: visible;
+        overflow-x: auto;
         justify-content: center;
-        gap: 10px;
-        margin-bottom: 1rem;
     }
 
-    .col-2 img {
-        max-width: 60px;
+    .col-md-2.d-flex.flex-column.gap-2 img {
+        width: 75px;
+        height: 75px;
     }
 
-    /* Centra la información del producto */
-    .col-md-6.text-start {
-        margin-top: 1rem;
-        text-align: center;
-    }
-
-    /* Botones más amplios en móvil */
-    .btn {
-        width: 100%;
-    }
-
-    h2 {
-        font-size: 1.6rem;
+    .carousel-inner {
+        height: 340px !important;
     }
 }
 
-/* Ajuste para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .carousel-inner {
-        height: 230px;
+@media (max-width: 600px) {
+    .col-md-2.d-flex.flex-column.gap-2 img {
+        width: 60px;
+        height: 60px;
     }
 
-    .col-md-6 {
-        text-align: center;
+    .carousel-inner {
+        height: 260px !important;
     }
+}
+
+/**********************************************************/
+
+/* ARREGLOS PARA EL RESUMEN DEL CARRITO EN PRODUCTOS.HTML */
+
+/* Panel de carrito fijo al hacer scroll */
+.sticky-cart {
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+}
+
+/* En pantallas pequeñas, se comportará como un bloque normal. */
+@media (max-width: 991px) {
+    .sticky-cart {
+        position:static;
+        margin-top: 1rem;
+    }
+}
+
+/* Imágenes del carrito lateral (tipo Amazon) */
+.mini-cart-img {
+    width: 100px;      /* antes 45px */
+    height: 100px;
+    object-fit: cover;  /* recorta sin deformar */
+    border-radius: 8px;
+    margin-right: 10px;
+    flex-shrink: 0;     /* que no se encoja */
+}
+
+/* Cada ítem del carrito */
+.cart-mini-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.sticky-cart .card-body {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+/* Que la tarjeta del carrito lateral se adapte a su contenido */
+.sticky-cart {
+    height: auto;
+}
+
+/* Aseguramos que el contenido no se reparta “entre arriba y abajo” */
+.sticky-cart .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* espacio entre título, items y resumen */
+}
+
+/* PEQUEÑO AJUSTE A PARRAFOS DE INICIO */
+#intro1 {
+    margin-left: 25px;
+}
+#intro2 {
+    margin-left: 25px;
+}
+
+/* CAMBIO DE COLOR AL SUBTOTAL DEL RESUMEN */
+.resultado_resumen {
+    color: #0A1A2F;
 }

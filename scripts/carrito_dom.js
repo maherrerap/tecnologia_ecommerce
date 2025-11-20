@@ -1,5 +1,9 @@
-
+// =====================================================
+// Archivo: carrito_dom.js
+// =====================================================
 // Cuando el documento esté listo, se crea el carrito de compras
+// =====================================================
+
 $(document).ready(function () {
     renderCart();
 });
@@ -11,14 +15,14 @@ function renderCart() {
     const cart = getCart();
 
     // 2. Seleccionamos el contenedor donde van las tarjetas
-    const container = $("#cart-items");
+    const $container = $("#cart-items");
 
     // 3. Limpiamos lo que haya
-    container.empty();
+    $container.empty();
 
     // 4. Si no hay productos, mostramos mensaje y subtotal 0
     if (cart.length === 0) {
-        container.append(`<p class="text-muted">Tu carrito está vacío.</p>`);
+        $container.append(`<p class="text-muted">Tu carrito está vacío.</p>`);
         $("#subtotal").text("$0.00");
         return;
     }
@@ -27,7 +31,6 @@ function renderCart() {
     let subtotal = 0;
 
     cart.forEach(item => {
-
         subtotal += item.price * item.quantity;
 
         // Armamos la tarjeta con etiquetas bootstrap.
@@ -70,7 +73,7 @@ function renderCart() {
         `;
 
         // Lo añadimos al contenedor
-        container.append(card);
+        $container.append(card);
     });
 
     // 6. Se actualiza el subtotal en el panel derecho
@@ -82,7 +85,7 @@ function renderCart() {
 // MANEJO DE BOTONES
 // =========================
 
-// Funcionamiento para botón sumar cantidad.
+// Botón sumar cantidad
 $("#cart-items").on("click", ".btn_sumar", function () {
     const id = parseInt($(this).data("id"));
     let cart = getCart();
@@ -95,35 +98,30 @@ $("#cart-items").on("click", ".btn_sumar", function () {
     }
 });
 
-// Funcionamiento para botón restar cantidad.
+// Botón restar cantidad
 $("#cart-items").on("click", ".btn_restar", function () {
     const id = parseInt($(this).data("id"));
     let cart = getCart();
 
     const item = cart.find(p => p.id === id);
-    if (item) {
-        // evitamos que baje de 1
-        if (item.quantity > 1) {
-            item.quantity -= 1;
-            saveCart(cart);
-            renderCart();
-        }
+    if (item && item.quantity > 1) {
+        item.quantity -= 1;
+        saveCart(cart);
+        renderCart();
     }
 });
 
-// Funcionamiento para botón para sacar el producto del carrito.
-
+// Botón eliminar producto
 $("#cart-items").on("click", ".btn_delete", function () {
     const id = parseInt($(this).data("id"));
     let cart = getCart();
 
     // Se filtra para sacar el producto
-    cart = cart.filter(p => p.id === undefined ? false : p.id !== id);
+    cart = cart.filter(p => p.id !== id);
 
     // Se guarda el carrito actualizado
     saveCart(cart);
 
     // Se re-renderiza la vista del carrito
     renderCart();
-
-})
+});

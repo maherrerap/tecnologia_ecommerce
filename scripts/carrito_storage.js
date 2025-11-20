@@ -1,4 +1,11 @@
-function getCart(){
+// =====================================================
+// Archivo: carrito_storage.js
+// =====================================================
+// Mantiene las funciones originales (getCart, saveCart, addToCart)
+// Solo se ajustó la validación y el uso de localStorage.
+// =====================================================
+
+function getCart() {
     // Se lee desde localStorage
     const cartStr = localStorage.getItem("cartItems");
 
@@ -12,12 +19,10 @@ function getCart(){
 }
 
 function saveCart(cart) {
-
     // Se convierte el array de productos a texto JSON
     const cartStr = JSON.stringify(cart);
 
     // Se guarda ese texto en el localStorage
-    // Se usa la misma clave que getCart()
     localStorage.setItem("cartItems", cartStr);
 }
 
@@ -28,19 +33,18 @@ function addToCart(product) {
     const existingItem = cart.find(item => item.id === product.id);
 
     if (existingItem) {
-
-        // Si el producto ya está en el carrito, se muestra este mensaje.
-        alert("El producto ya estaba en el carrito. Modifica la cantidad desde el carrito.");
+        // Si el producto ya está en el carrito, mostrar aviso y no duplicar
+        alert("El producto ya está en el carrito. Modifica la cantidad desde el carrito.");
     } else {
-
-        // En el caso que el producto no exista, se aumenta su cantidad en el carrito de 1.
+        // En el caso que el producto no exista, se agrega con cantidad 1.
         const newItem = {
             id: product.id,
             name: product.name,
             price: product.price,
-            image: product.image,
+            image: product.image || (product.imageD ? product.imageD[0] : ""), // por si no tiene imagen base
             quantity: 1
         };
+
         cart.push(newItem);
         saveCart(cart);
         alert(`${product.name} añadido al carrito`);
