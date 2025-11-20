@@ -1,78 +1,58 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contact-form");
-    if (!form) return;
+// Validación HTML5 + flujo visual con jQuery y Bootstrap
+$(document).ready(function () {
+    const $form    = $("#contact-form");
+    const $wrapper = $("#cambiar_jquery"); // contenedor que oculta el formulario
+    const $status  = $("#cambio");         // alerta de estado (Enviando... / Éxito)
+    const $reload  = $("#recargar");       // botón "Enviar otra Solicitud"
 
-    const inputs = {
-        firstName: form.querySelector("#firstName"),
-        lastName: form.querySelector("#lastName"),
-        email: form.querySelector("#email"),
-        phone: form.querySelector("#phone"),
-        message: form.querySelector("#message"),
-    };
+    if ($form.length === 0) return;
 
-    // Expresiones regulares básicas
-    const patterns = {
-        name: /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$/,
-        email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        phone: /^(\+593|0)[0-9\s]{8,12}$/,
-    };
+    // Estado inicial
+    $status.hide();
+    $reload.hide();
 
-    // Limpia los mensajes nativos para usar los nuestros
-    Object.values(inputs).forEach(input => {
-        input.addEventListener("input", () => {
-            input.setCustomValidity("");
-            input.classList.remove("is-invalid", "is-valid");
-        });
+    // Recargar para enviar otra solicitud
+    $reload.on("click", function () {
+        location.reload();
     });
 
-    // Escucha el envío
-    form.addEventListener("submit", (e) => {
-        e.preventDefault(); // evita recargar
-
-        let isValid = true;
-
-        // === Validar nombre ===
-        if (!patterns.name.test(inputs.firstName.value.trim())) {
-            inputs.firstName.setCustomValidity("Por favor, ingresa un nombre válido.");
-            inputs.firstName.classList.add("is-invalid");
-            isValid = false;
-        }
-
-        // === Validar apellido ===
-        if (!patterns.name.test(inputs.lastName.value.trim())) {
-            inputs.lastName.setCustomValidity("Por favor, ingresa un apellido válido.");
-            inputs.lastName.classList.add("is-invalid");
-            isValid = false;
-        }
-
-        // === Validar correo ===
-        if (!patterns.email.test(inputs.email.value.trim())) {
-            inputs.email.setCustomValidity("Por favor, ingresa un correo válido.");
-            inputs.email.classList.add("is-invalid");
-            isValid = false;
-        }
-
-        // === Validar teléfono ===
-        if (!patterns.phone.test(inputs.phone.value.trim())) {
-            inputs.phone.setCustomValidity("Por favor, ingresa un número válido (ej. +593 99 999 9999).");
-            inputs.phone.classList.add("is-invalid");
-            isValid = false;
-        }
-
-        // === Validar mensaje ===
-        if (inputs.message.value.trim().length < 10) {
-            inputs.message.setCustomValidity("Por favor, escribe al menos 10 caracteres.");
-            inputs.message.classList.add("is-invalid");
-            isValid = false;
-        }
-
-        // === Mostrar errores nativos del navegador ===
-        if (!isValid) {
-            form.reportValidity(); // activa las burbujas nativas (HTML5)
+    // SUBMIT con validación nativa HTML5
+    $form.on("submit", function (e) {
+        // Validación nativa del navegador
+        if (!$form[0].checkValidity()) {
+            e.preventDefault();
+            $form.addClass("was-validated");
+            $form[0].reportValidity();
             return;
         }
 
-        // === Si todo es válido ===
-        Object.values(inputs).forEach(i => i.classList.add("is-valid"));
+        // Validación correcta
+        e.preventDefault();
+        $form.addClass("was-validated");
+
+        // Ocultar el formulario y mostrar flujo "Enviando..."
+        $wrapper.fadeOut(300, function () {
+            $status
+                .removeClass("alert-success alert-warning")
+                .addClass("alert alert-warning text-center")
+                .text("Enviando formulario...")
+                .fadeIn(200);
+
+            // Simulación de envío (2 segundos) -> Mensaje de éxito
+            setTimeout(function () {
+                $status
+                    .removeClass("alert-warning")
+                    .addClass("alert-success")
+                    .text("Formulario enviado con éxito");
+
+                // Mostrar botón para nueva solicitud
+                $reload.fadeIn(200);
+
+                // Reset form para un siguiente envío
+                $form[0].reset();
+                $form.removeClass("was-validated");
+                $form.find("input, textarea").removeClass("is-valid is-invalid");
+            }, 2000);
+        });
     });
 });

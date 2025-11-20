@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/bootstrap-icons/bootstrap-icons.css">
+    <title>COLD TECH – E-commerce</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+<header class="header-coldtech">
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid d-flex align-items-center justify-content-between px-4">
+
+            <div class="d-flex align-items-center gap-4">
+                <!-- Logo -->
+                <a href="../pages/portada.html" class="d-flex align-items-center">
+                    <img src="images/cold_tech_logo.png" alt="ColdTech Logo" class="header-logo">
+                </a>
+
+                <!-- Menú de navegación -->
+                <ul class="navbar-nav flex-row align-items-center mb-0 gap-4">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-coldtech fw-semibold" href="../pages/portada.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-coldtech fw-semibold" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-coldtech fw-semibold" href="Formulario.html">Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="carrito.html" class="nav-link text-light fw-semibold d-flex align-items-center" style="font-size:14px;">
+                            <img src="images/carrito.png" alt="Carrito" style="height:22px; width:22px; margin-right:6px;">
+                            Carrito
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+
+                <!-- Barra de búsqueda minimalista -->
+                <form class="search-container" role="search">
+                    <input
+                            type="text"
+                            class="search-input"
+                            placeholder="Buscar producto, categoría o marca..."
+                            aria-label="Buscar producto">
+                    <button type="submit" class="search-btn">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+
+                <!-- Botón de inicio de sesión -->
+                <a href="login.html" class="btn btn-login-header fw-semibold">Iniciar sesión</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- ===== HERO PRINCIPAL ===== -->
+<section class="hero bg-light">
+    <div class="hero-content">
+        <h1>Innovación que evoluciona contigo</h1>
+        <p>Explora la mejor tecnología con COLD TECH. Laptops, smartphones, accesorios y más.</p>
+    </div>
+</section>
+
+<!-- ===== SOBRE NOSOTROS ===== -->
+<section class="about-us">
+    <div class="container">
+        <h2 class="section-title text-center">Quiénes Somos</h2>
+        <p class="about-text text-center">
+            En <strong>COLD TECH</strong> somos una empresa ecuatoriana especializada en ofrecer soluciones tecnológicas
+            de última generación. Nos enfocamos en acercar la innovación a las personas, ofreciendo productos electrónicos
+            de alta calidad con servicio técnico confiable y atención personalizada.
+        </p>
+
+        <div class="about-grid">
+            <div class="about-card mission">
+                <h3>Misión</h3>
+                <p>
+                    Brindar tecnología avanzada, confiable y accesible que impulse la productividad,
+                    educación y conectividad de nuestros clientes, a través de un servicio eficiente
+                    y humano.
+                </p>
+            </div>
+
+            <div class="about-card vision">
+                <h3>Visión</h3>
+                <p>
+                    Ser líderes en innovación tecnológica en Ecuador y Latinoamérica,
+                    reconocidos por la calidad de nuestros productos, nuestro compromiso con el cliente
+                    y el impulso al desarrollo digital sostenible.
+                </p>
+            </div>
+
+            <div class="about-card values">
+                <h3>Valores</h3>
+                <p>
+                    Innovación, responsabilidad, confianza y servicio. Estos valores guían cada una
+                    de nuestras decisiones y fortalecen el vínculo con nuestros clientes ColdTech.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PRODUCTOS DESTACADOS ===== -->
+<section class="productos bg-light">
+    <h2 class="section-title">Productos destacados</h2>
+
+    <div class="productos-grid">
+        <div class="product-card mb-4">
+            <img src="images/sony_wh.png" alt="Producto 1">
+            <h3>Audífonos Premium</h3>
+            <p>$458,00</p>
+            <a href="detalle.html?id=9"><button class="btn-primary">Ver detalles</button></a>
+        </div>
+
+        <div class="product-card mb-4">
+            <img src="images/msi_titan.jpg" alt="Producto 2">
+            <h3>Laptop ColdTech Pro</h3>
+            <p>$6,199.00</p>
+            <a href="detalle.html?id=3"><button class="btn-primary">Ver detalles</button></a>
+        </div>
+
+        <div class="product-card mb-4">
+            <img src="images/iphone_17.jpg" alt="Producto 3">
+            <h3>IPhone 17</h3>
+            <p>$1,199.00</p>
+            <a href="detalle.html?id=1"><button class="btn-primary">Ver detalles</button></a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-coldtech">
+    <div class="footer-container">
+        <div class="footer-left">
+            <p id="texto_footer">© 2025 ColdTech Inc. | Todos los Derechos Reservados</p>
+        </div>
+        <div class="footer-right">
+            <a href="#" class="footer-social">
+                <img src="images/facebook.png" alt="facebook" height="30">
+                <span>cuenta_facebook</span>
+            </a>
+            <a href="#" class="footer-social">
+                <img src="images/instagram.png" alt="instagram" height="30">
+                <span>cuenta_instagram</span>
+            </a>
+            <a href="#" class="footer-social">
+                <img src="images/X_logo.png" alt="X_logo" height="30">
+                <span>cuenta_X</span>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="lib/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
